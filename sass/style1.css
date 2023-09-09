@@ -70,7 +70,7 @@ header .nav_list .nav-item .nav-link {
   font-size: 1.2em;
   letter-spacing: 2px;
   text-align: center;
-  color: #000 !important;
+  color: #000;
 }
 header .nav_list .nav-item .nav-link:hover {
   background: linear-gradient(450deg, #06f5d5, #cf07f7, #3b12f1);
