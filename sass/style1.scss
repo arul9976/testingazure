@@ -16,10 +16,10 @@ $margin: 15px;
 }
 
 body {
-    // background: #eeecec;
-    background: url(../assets/background1.avif) no-repeat;
-    background-position: center;
-    background-size: cover;
+    background: #eeecec;
+    // background: url(../assets/background1.avif) no-repeat;
+    // background-position: center;
+    // background-size: cover;
 }
 
 .bodyDark {
@@ -87,6 +87,7 @@ header {
                 font-size: 1.2em;
                 letter-spacing: 2px;
                 text-align: center;
+                color: #000;
             }
 
             .nav-link:hover {
