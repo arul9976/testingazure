@@ -487,10 +487,13 @@ header {
     min-height: 100dvh;
     width: 100%;
     padding: 30px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .box {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, auto));
+        grid-template-columns: repeat(auto-fit, minmax(220px, auto));
         grid-gap: 4rem;
         align-items: center;
         justify-content: center;
