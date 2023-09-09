@@ -16,10 +16,10 @@ $margin: 15px;
 }
 
 body {
-    background: #eeecec;
-    // background: url(../assets/background1.avif) no-repeat;
-    // background-position: center;
-    // background-size: cover;
+    // background: #eeecec;
+    background: url(../assets/background1.avif) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .bodyDark {
@@ -46,6 +46,7 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: 80px;
     padding: 10px 6%;
     margin: 0;
 
@@ -56,7 +57,7 @@ header {
         border-radius: 40px;
 
         a {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             letter-spacing: 3px;
             color: #fff;
 
