@@ -8,7 +8,16 @@
 }
 
 body {
-  background: #eeecec;
+  background: #e6e6e6;
+}
+
+section {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden !important;
 }
 
 .bodyDark {
@@ -17,20 +26,8 @@ body {
   transition: 0.2s;
 }
 
-.bodyDark .sticky {
-  background: #000;
-  box-shadow: 0px 0px 19px #3d3c3c;
-}
-
-header.sticky {
-  position: fixed;
-  padding: 10px 5%;
-  background: transparent;
-  transition: 0.3s;
-  box-shadow: 0px 0px 19px #dad9d9;
-}
-
 header {
+  position: fixed !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,6 +35,7 @@ header {
   height: 80px;
   padding: 10px 6%;
   margin: 0;
+  top: 0;
 }
 header .logo {
   background: linear-gradient(to right, #8404ec, #cf07f7);
@@ -71,7 +69,7 @@ header .nav_list .nav-item .nav-link {
   font-size: 1.2em;
   letter-spacing: 2px;
   text-align: center;
-  color: #000;
+  color: #f801e4;
 }
 header .nav_list .nav-item .nav-link:hover {
   background: linear-gradient(450deg, #06f5d5, #cf07f7, #3b12f1);
@@ -116,16 +114,16 @@ header .dark {
   justify-content: center;
   cursor: pointer;
 }
-header .dark ion-icon {
+header .dark i {
   font-size: 1.5em;
   border: 3px solid #fd8f00;
   color: #fd8f00;
   margin: 0;
   border-radius: 50%;
-  padding: 10px 10px;
+  padding: 8px 12px;
   font-weight: 900;
 }
-header .dark ion-icon:hover {
+header .dark i:hover {
   background: #fd8f00;
   color: #fff;
   transform: scale3d(1.2);
@@ -145,28 +143,6 @@ header .active .sun {
 header .active .moon {
   display: none;
 }
-@media (max-width: 989px) {
-  header .nav_list {
-    background: green;
-    position: absolute;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    left: -100%;
-    width: 50%;
-    height: 90dvh;
-    top: 70px;
-    transition: 0.4s;
-  }
-  header .show {
-    left: 0;
-  }
-}
-@media (max-width: 668px) {
-  header .nav_list {
-    width: 50%;
-  }
-}
 header .social ul {
   padding: 0;
   margin: 0;
@@ -177,7 +153,7 @@ header .social ul {
 header .social ul a {
   padding: 5px 10px;
   margin: 0 10px;
-  background: #3b12f1;
+  background: linear-gradient(to right, #3b12f1, #e70dcd);
   border-radius: 50%;
   font-weight: bold;
   font-size: 1.5em;
@@ -186,7 +162,7 @@ header .social ul a {
 header .social ul a:hover {
   transform: scale(1.2);
   transition: ease 0.3s;
-  background: #cf07f7;
+  background: linear-gradient(to right, #cf07f7, #06f5d5);
   color: #fff;
 }
 @media (max-width: 1208px) {
@@ -194,24 +170,75 @@ header .social ul a:hover {
     display: none;
   }
 }
-header .toggle {
-  background: rgb(0, 168, 235);
-  padding: 5px;
+@media (max-width: 989px) {
+  header .nav_list {
+    background: red;
+    position: absolute;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    right: 1rem;
+    width: 20rem;
+    height: 0;
+    top: 4.2rem;
+    transition: 0.4s;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  header .show {
+    height: 80vh;
+    top: 4.2rem;
+  }
+}
+@media (max-width: 600px) {
+  header .nav_list {
+    width: 50%;
+  }
+}
+header .toggle_set {
   position: fixed;
-  right: 10dvh;
-  border-radius: 10px;
+  right: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  background: transparent;
+  transition: 0.5s;
+}
+header .toggle_set.active {
+  width: 14rem;
+  transform: rotate(-360deg);
+}
+@media (max-width: 600px) {
+  header .toggle_set.active {
+    width: 25%;
+  }
+}
+header .toggle {
+  position: relative;
+  outline: none;
+  border: none;
+  background: #3b12f1;
+  padding: 0 7px;
+  border-radius: 50%;
+  margin: 0;
+  transition: 0.5s;
+  cursor: pointer;
+}
+header .toggle b {
+  font-size: 4rex;
   border: none;
   color: #fff;
 }
-header .toggle ion-icon {
-  font-size: 2em;
+header .toggle.active {
+  background: red;
 }
-header .toggle ion-icon.open,
-header .toggle.active ion-icon.close {
+header .toggle b.on,
+header .toggle.active b.off {
   display: block;
 }
-header .toggle ion-icon.close,
-header .toggle.active ion-icon.open {
+header .toggle b.off,
+header .toggle.active b.on {
   display: none;
 }
 @media (min-width: 989px) {
@@ -226,9 +253,21 @@ header .toggle.active ion-icon.open {
   justify-content: center;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5rem;
-  padding: 10px 0 100px 0;
-  min-height: 100dvh;
   margin: 0 auto;
+  overflow: hidden;
+}
+@media (max-width: 718px) {
+  .home .home_text {
+    text-align: center;
+  }
+}
+@media (max-width: 718px) {
+  .home {
+    padding: 50px 2% !important;
+    grid-gap: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 .home .homeSocial {
   display: none;
@@ -238,7 +277,7 @@ header .toggle.active ion-icon.open {
     display: block;
     position: absolute !important;
     right: 10px;
-    top: 170px;
+    top: 5rem;
   }
   .home .homeSocial ul {
     display: grid;
@@ -263,17 +302,22 @@ header .toggle.active ion-icon.open {
     color: #fff;
   }
 }
-@media (min-width: 1114px) {
-  .home .clearfix {
-    width: 400px;
-  }
-}
 .home .clearfix {
   padding: 0;
   margin: auto;
   border-radius: 50%;
   position: relative;
   background: #fff;
+}
+@media (max-width: 724px) {
+  .home .clearfix .img-fluid {
+    width: 200px;
+  }
+}
+@media (min-width: 1120px) {
+  .home .clearfix .img-fluid {
+    width: 400px;
+  }
 }
 .home .clearfix::after {
   content: "";
@@ -293,17 +337,8 @@ header .toggle.active ion-icon.open {
     transition: 0.4s;
   }
 }
-@media (max-width: 768px) {
-  .home {
-    display: grid;
-    grid-template-columns: 1fr;
-    transition: ease 0.5s;
-    padding: 80px 10%;
-  }
-}
 @media (min-width: 1120px) {
   .home {
-    min-width: 100dvh;
     width: -moz-max-content;
     width: max-content;
   }
@@ -341,13 +376,13 @@ header .toggle.active ion-icon.open {
   position: relative;
   width: 90%;
 }
-@media (max-width: 550px) {
+@media (max-width: 718px) {
   .home_text h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     transition: ease 0.5s;
   }
 }
-@media (max-width: 930px) {
+@media (max-width: 1024px) {
   .home_text h1 {
     font-size: 3em;
   }
@@ -402,8 +437,6 @@ header .toggle.active ion-icon.open {
 }
 
 .progress_bar {
-  min-height: 100dvh;
-  width: 100%;
   padding: 30px 2%;
   display: flex;
   align-items: center;
@@ -497,17 +530,16 @@ header .toggle.active ion-icon.open {
     --b: 360deg;
   }
 }
-.Project .project_list {
+.project_list {
   width: 100%;
   padding: 50px 0;
-  min-height: 100dvh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, auto));
   grid-gap: 4rem;
   align-items: center !important;
   justify-content: center !important;
 }
-.Project .project_list .card {
+.project_list .card {
   position: relative;
   background: #fff;
   width: 250px;
@@ -517,16 +549,16 @@ header .toggle.active ion-icon.open {
   border-radius: 20px;
   cursor: pointer;
 }
-.Project .project_list .card:hover {
+.project_list .card:hover {
   width: 350px;
   height: 350px;
 }
-.Project .project_list .card:hover .imgSi {
+.project_list .card:hover .imgSi {
   width: 250px;
   height: 250px;
   border-radius: 50%;
 }
-.Project .project_list .imgSi {
+.project_list .imgSi {
   position: absolute;
   overflow: hidden;
   background: #fff;
@@ -539,7 +571,7 @@ header .toggle.active ion-icon.open {
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
   transition: 0.5s;
 }
-.Project .project_list .imgSi img {
+.project_list .imgSi img {
   position: absolute;
   top: 0;
   left: 0;
@@ -548,10 +580,10 @@ header .toggle.active ion-icon.open {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.Project .project_list .card:hover .content {
+.project_list .card:hover .content {
   justify-content: flex-start;
 }
-.Project .project_list .content {
+.project_list .content {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -564,32 +596,32 @@ header .toggle.active ion-icon.open {
   transition: 0.5s;
   overflow: hidden;
 }
-.Project .project_list .content .details {
+.project_list .content .details {
   text-align: center;
   transition: 0.5s;
 }
-.Project .project_list .content .details h2 {
+.project_list .content .details h2 {
   text-transform: uppercase;
   color: #000;
   font-size: 1.25em;
   font-weight: 900;
 }
-.Project .project_list .content .details p {
+.project_list .content .details p {
   position: absolute;
   right: 10%;
   font-size: 1em;
   font-weight: 500;
   opacity: 0.5;
 }
-.Project .project_list .content .details h5 {
+.project_list .content .details h5 {
   position: absolute;
   bottom: -100%;
   left: 0;
 }
-.Project .project_list .card:hover .content {
+.project_list .card:hover .content {
   justify-content: center;
 }
-.Project .project_list .card:hover .content h5 {
+.project_list .card:hover .content h5 {
   display: block;
   color: #000;
   transition: 0.4s;
@@ -597,16 +629,16 @@ header .toggle.active ion-icon.open {
   bottom: 0;
 }
 @media (max-width: 928px) {
-  .Project .project_list .card:hover .content h2 {
+  .project_list .card:hover .content h2 {
     position: absolute;
     right: 25%;
     top: 30%;
   }
-  .Project .project_list .card:hover .content p {
+  .project_list .card:hover .content p {
     top: 40%;
     right: 0%;
   }
-  .Project .project_list .card:hover .content h5 {
+  .project_list .card:hover .content h5 {
     display: block;
     color: #000;
     transition: 0.4s;
@@ -616,34 +648,38 @@ header .toggle.active ion-icon.open {
     padding: 0 10px;
     text-align: center;
   }
-  .Project .project_list .card {
+  .project_list .card {
     width: 260px;
     height: 200px;
   }
-  .Project .project_list .card .imgSi {
+  .project_list .card .imgSi {
     width: 200px;
     height: 200px;
   }
-  .Project .project_list .card:hover {
+  .project_list .card:hover {
     width: 250px;
     height: 340px;
   }
-  .Project .project_list .card:hover .imgSi {
+  .project_list .card:hover .imgSi {
     width: 150px;
     height: 150px;
     border-radius: 50%;
   }
 }
+
 @media (min-width: 1200px) {
-  .Project .project_list {
+  .project_list {
     grid-template-columns: repeat(3, minmax(260px, auto));
     grid-gap: 5rem 10rem;
   }
 }
-
 .sub-service {
   padding: 0 8%;
-  height: 300px;
+}
+@media (max-width: 800px) {
+  .sub-service {
+    min-height: 100dvh;
+  }
 }
 
 .item {
@@ -692,10 +728,97 @@ header .toggle.active ion-icon.open {
   background: #3d3c3c;
 }
 
-.Contact {
-  width: 100%;
-  min-height: 100dvh;
+.bodyDark footer {
+  background: #252525;
+}
+.bodyDark footer p,
+.bodyDark footer a {
+  color: #f5f5f5;
+}
+.bodyDark footer .foot:hover {
+  box-shadow: 0 35px 85px rgba(10, 15, 70, 0.07);
+  background: #3d3c3c;
+}
+
+@media (max-width: 850px) {
+  footer {
+    display: grid !important;
+  }
+}
+.nav-itemTrash {
+  display: none;
+}
+
+footer {
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  font-family: cursive;
+  text-decoration: none;
+  justify-content: center;
+  background: #f1f1f1;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+footer h1 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+  font-weight: 900;
+}
+footer p {
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  color: #3d3c3c;
+}
+footer p a {
+  color: #000;
+  margin-right: 0.5rem;
+  font-size: 1.4em;
+}
+footer .foot {
+  width: 20rem;
+  height: auto;
+  padding: 2rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+footer .foot .social {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
+}
+footer .foot .social ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .foot .social ul a {
+  padding: 5px 10px;
+  margin: 0 10px;
+  background: linear-gradient(to right, #3b12f1, #e70dcd);
+  border-radius: 25%;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #fff;
+}
+footer .foot .social ul a:hover {
+  transform: scale(1.2);
+  transition: ease 0.3s;
+  background: linear-gradient(to right, #cf07f7, #06f5d5);
+  color: #fff;
+}
+footer .foot:hover {
+  box-shadow: 0 35px 85px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+footer .f1 {
+  width: 25rem;
+}
+footer .f2 {
+  width: 22rem;
 }/*# sourceMappingURL=style1.css.map */

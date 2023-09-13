@@ -1,37 +1,60 @@
+// const navbar = document.querySelector('.sticky-top')
+// window.addEventListener('scroll', () => {
+//   navbar.classList.toggle('sticky' , this.window.scrollY > 5)
+// })
 
-
-const navbar = document.querySelector('.sticky-top')
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('sticky' , this.window.scrollY > 0)
-})
+// Scroll 
 
 function btnToggle(navId, toggleId) {
   const navList = document.getElementById(navId)//navId
-  const toggle = document.getElementById(toggleId)//toggleId 
-
+  const toggle = document.getElementById(toggleId)//toggleId
+  const Section = document.querySelectorAll('section')
+  const NavLink = document.querySelectorAll('.nav_list a')
+  const toggleSet = document.querySelector('.toggle_set')
 
   if (navList && toggle) {
     toggle.addEventListener('click', () => {
       navList.classList.toggle('show')
       toggle.classList.toggle('active')
+      toggleSet.classList.toggle('active')
 
     })
   }
 
-  //nav_item active
-  const navItem = document.querySelectorAll('.nav-link')
-  console.log(navItem);
-
-  navItem.forEach(Nav => {
+  NavLink.forEach(Nav => {
     Nav.addEventListener('click', () => {
       document.querySelector('.active')?.classList.remove('active')
       Nav.classList.add('active')
       navList.classList.remove('show')
-    })
+      toggle.classList.remove('active')
+      toggleSet.classList.remove('active')
+    });
 
   });
+
+  window.onscroll = () => {
+    Section.forEach(SectionOn => {
+      let top = window.scrollY;
+      let offset = SectionOn.offsetTop - 60;
+      let height = SectionOn.offsetHeight;
+      let id = SectionOn.getAttribute('id');
+
+
+      if (top >= offset && top < offset + height) {
+        NavLink.forEach(link => {
+          document.querySelector('.nav_list a[href*=' + id + ']').classList.add('active');
+          link.classList.remove('active');
+        });
+      }
+    });
+  };
+
+
+
 }
 btnToggle('myNavbar', 'btn')
+
+
 
 
 // const myName = document.querySelector('.myName')
@@ -42,8 +65,8 @@ btnToggle('myNavbar', 'btn')
 
 
 
-let number = document.getElementById("number");
-let counter = 0;
+// let number = document.getElementById("number");
+// let counter = 0;
 
 // setInterval(() => {
 //   if (counter == "90") {
@@ -87,34 +110,22 @@ darkBtn.addEventListener('click', () => {
 })
 
 
-
-//progressBar
-
-
-
-// console.log(boxadd);
-
-
 // const Copied = boxadd.children[0].cloneNode(true)
 // const newDiv = document.createElement('div')
 // console.log(newDiv);
 
 
 function double() {
-    // const svg = document.querySelector('.svg')
-    // const clonesvg = svg.cloneNode(true)
-    // const circle = document.querySelector('.circle')
-    // const cloneCircle = circle.cloneNode(true)
+  // const svg = document.querySelector('.svg')
+  // const clonesvg = svg.cloneNode(true)
+  // const circle = document.querySelector('.circle')
+  // const cloneCircle = circle.cloneNode(true)
 
-    // const newEl = document.createElement('div')
-    // newEl.className = 'boxContent'
-    // newEl.append(clonesvg)
-    // newEl.append(cloneCircle)
-    // console.log(newEl);
-
-
-    
-
+  // const newEl = document.createElement('div')
+  // newEl.className = 'boxContent'
+  // newEl.append(clonesvg)
+  // newEl.append(cloneCircle)
+  // console.log(newEl);
 
 }
 
@@ -127,46 +138,46 @@ const progressNumFour = document.getElementById('progressValuesFour')
 const boxadd = document.querySelector('.box')
 
 function progress() {
-    let startvalue = 0,
-        endvalue = { 0: 90, 1: 80, 2:50, 3:30},
+  let startvalue = 0,
+    endvalue = { 0: 90, 1: 80, 2: 50, 3: 30 },
 
-        speed = 20;
+    speed = 20;
 
-    const progressEl = setInterval(() => {
-        startvalue++
-        progressNum.textContent = `${startvalue}%`
-        progressbar[0].style.background = `conic-gradient(var(--clr) ${startvalue * 3.6}deg, #c5c0c0 0deg)`
+  const progressEl = setInterval(() => {
+    startvalue++
+    progressNum.textContent = `${startvalue}%`
+    progressbar[0].style.background = `conic-gradient(var(--clr) ${startvalue * 3.6}deg, #c5c0c0 0deg)`
 
-        if (startvalue == endvalue[0]) {
-            clearInterval(progressEl)
-        }
-    }, speed);
+    if (startvalue == endvalue[0]) {
+      clearInterval(progressEl)
+    }
+  }, speed);
 
-    const progresscss = setInterval(() => {
-        progressNumCss.textContent = `${startvalue}%`
-        progressbar[1].style.background = `conic-gradient(var(--clr) ${startvalue * 3.6}deg, #c5c0c0 0deg)`
+  const progresscss = setInterval(() => {
+    progressNumCss.textContent = `${startvalue}%`
+    progressbar[1].style.background = `conic-gradient(var(--clr) ${startvalue * 3.6}deg, #c5c0c0 0deg)`
 
-        if (startvalue == endvalue[1]) {
-            clearInterval(progresscss)
-        }
-    }, speed);
+    if (startvalue == endvalue[1]) {
+      clearInterval(progresscss)
+    }
+  }, speed);
 
-    const progressjs = setInterval(() => {
-        progressNumJs.textContent = `${startvalue}%`
-        progressbar[2].style.background = `conic-gradient(var(--clr) ${startvalue * 3.6}deg, #c5c0c0 0deg)`
+  const progressjs = setInterval(() => {
+    progressNumJs.textContent = `${startvalue}%`
+    progressbar[2].style.background = `conic-gradient(var(--clr) ${startvalue * 3.6}deg, #c5c0c0 0deg)`
 
-        if (startvalue == endvalue[2]) {
-            clearInterval(progressjs)
-        }
-    }, speed);
+    if (startvalue == endvalue[2]) {
+      clearInterval(progressjs)
+    }
+  }, speed);
 
-    const progressFour = setInterval(() => {
-      progressNumFour.textContent = `${startvalue}%`
-      progressbar[3].style.background = `conic-gradient(var(--clr) ${startvalue * 3.6}deg, #c5c0c0 0deg)`
+  const progressFour = setInterval(() => {
+    progressNumFour.textContent = `${startvalue}%`
+    progressbar[3].style.background = `conic-gradient(var(--clr) ${startvalue * 3.6}deg, #c5c0c0 0deg)`
 
-      if (startvalue == endvalue[3]) {
-          clearInterval(progressFour)
-      }
+    if (startvalue == endvalue[3]) {
+      clearInterval(progressFour)
+    }
   }, speed);
 }
 progress()
