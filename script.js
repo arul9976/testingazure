@@ -185,7 +185,7 @@ progress()
 
 
 document.getElementById("copy").onclick = function(){
-  var copyText = document.getElementById("copyText").textContent + "kumar";
+  var copyText = document.getElementById("copyText").textContent;
   clipboard.writeText(copyText)
   // navigator.clipboard.writeText(copyText.textContent)
 }
