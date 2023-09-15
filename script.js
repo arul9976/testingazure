@@ -185,13 +185,12 @@ progress()
 
 
 document.getElementById("copy").onclick = function(){
-  var copyText = document.getElementById("copyText").textContent;
-  clipboard.writeText(copyText)
-  // navigator.clipboard.writeText(copyText.textContent)
+  var copyText = document.getElementById("copyText");
+  clipboard.writeText(copyText.textContent);
 }
 
 const copyIcon = document.getElementById('copy');
-console.log(copyIcon);
+
 
 copyIcon.addEventListener('click', () => {
   copyIcon.classList.add("Iactive");
@@ -209,6 +208,5 @@ copyIcon.addEventListener('click', () => {
   }, 3000);
   
 
-  console.log(valueNew);
 })
 
