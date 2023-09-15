@@ -42,6 +42,7 @@ function btnToggle(navId, toggleId) {
 
       if (top >= offset && top < offset + height) {
         NavLink.forEach(link => {
+          // document.querySelector('.nav_list .navitem[class*=' + id + ']').classList.add('active');
           document.querySelector('.nav_list a[href*=' + id + ']').classList.add('active');
           link.classList.remove('active');
         });
@@ -181,4 +182,33 @@ function progress() {
   }, speed);
 }
 progress()
+
+
+document.getElementById("copy").onclick = function(){
+  var copyText = document.getElementById("copyText").textContent + "kumar";
+  clipboard.writeText(copyText)
+  // navigator.clipboard.writeText(copyText.textContent)
+}
+
+const copyIcon = document.getElementById('copy');
+console.log(copyIcon);
+
+copyIcon.addEventListener('click', () => {
+  copyIcon.classList.add("Iactive");
+
+  setTimeout(() => {
+    const valueNew = copyIcon.innerHTML = "<ion-icon id='copy' name='checkmark-outline'></ion-icon>";
+  }, 100)
+ 
+ 
+
+  setTimeout(() => {
+    const valueNew = copyIcon.innerHTML = "<ion-icon id='copy' name='copy-outline'></ion-icon>";
+    copyIcon.classList.remove("Iactive")
+    copyIcon.classList.add("Active")
+  }, 3000);
+  
+
+  console.log(valueNew);
+})
 

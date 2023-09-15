@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="sass/style1.css">
   <title>PortFolio</title>
 </head>
@@ -15,8 +18,10 @@
 <body id="bodyLD" class="body">
 
   <header class="sticky-top">
-    <div class="logo">
-      <a class="navbar-brand" href="#">P<span>.F</span>olio</a>
+    <div data-aos="fade-right">
+      <div class="logo">
+        <a class="navbar-brand" href="#">P<span>.F</span>olio</a>
+      </div>
     </div>
 
     <div class="dark">
@@ -24,36 +29,26 @@
       <b class="sun"><i class="bi bi-sun-fill"></i></b>
     </div>
 
-    <div class="nav_list" id="myNavbar">
-
-      <li class="nav-item">
-        <a class="nav-link" href="#Home">Home</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#about">About</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#skill">Skills</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#Project">Projects</a>
-      </li>
-
-      <li class="nav-itemTrash">
-        <a class="nav-link" href="#C">C</a>
-      </li>
-
+    <div data-aos="fade-down">
+      <div class="nav-items">
+        <ul class="nav_list" id="myNavbar">
+          <li class="navitem"><a href="#Home">Home</a></li>
+          <li class="navitem"><a href="#about">About</a></li>
+          <li class="navitem"><a href="#skill">Skills</a></li>
+          <li class="navitem"><a href="#Project">Projects</a></li>
+          <li class="navitem" style="display: none;"><a href="#C"></a></li>
+        </ul>
+      </div>
     </div>
 
     <div class="social">
-      <ul>
-        <a href="https://github.com/arul9976/"><i class="bi bi-github"></i></a>
-        <a href="https://www.instagram.com/mr_arulkumar_03/"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/arul-kumar-m-494791254/"><i class="bi bi-linkedin"></i></a>
-      </ul>
+      <div data-aos="fade-left">
+        <ul>
+          <a href="https://github.com/arul9976/"><i class="bi bi-github"></i></a>
+          <a href="https://www.instagram.com/mr_arulkumar_03/"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/arul-kumar-m-494791254/"><i class="bi bi-linkedin"></i></a>
+        </ul>
+      </div>
     </div>
 
 
@@ -69,7 +64,7 @@
 
 
   <section class="home" id="Home">
-    <div class="home_text">
+    <div data-aos="fade-down" class="home_text">
       <h3>Hi ,<span>I'm</span></h3>
       <h1 class="myName">Arulkumar M</h1>
       <h5>From<span>Tenkasi</span></h5>
@@ -83,10 +78,10 @@
     </div>
 
     <div class="clearfix">
-      <img class="img-fluid" src="./images/arul.png" alt="">
+      <img data-aos="fade-down" class="img-fluid" src="./images/arul.png" alt="">
     </div>
 
-    <div class="homeSocial">
+    <div class="homeSocial" data-aos="fade-left">
       <ul>
         <a href="https://github.com/arul9976/"><i class="bi bi-github"></i></a>
         <a href="https://www.instagram.com/mr_arulkumar_03/"><i class="bi bi-instagram"></i></a>
@@ -131,48 +126,58 @@
 
   <!-- About -->
   <section id="about">
-    <h1>HIhiHIIHIHIHI</h1>
+
   </section>
   <!-- About/ -->
 
   <!-- Skills -->
   <section class="progress_bar" id="skill">
     <div class="box">
-      <div class="boxContent" style="--clr: #fd8f00;">
-        <div class="svg">
-          <box-icon name='html5' type='logo' animation='flashing' color='#f50f0f'></box-icon>
-          <div class='textxml' name="htmltxt">HTML</div>
-        </div>
-        <div class="circle" style="--clr: #fd8f00;">
-          <h3 id='progressValues'>0<small>%</small></h3>
-        </div>
-      </div>
-      <div class="boxContent" style="--clr: #00fd22;">
-        <div class="svg">
-          <box-icon name='css3' type='logo' animation='flashing' color='blue'></box-icon>
-          <div class='textxml'>CSS/SASS</div>
-        </div>
-        <div class="circle" style="--clr: #00fd22;">
-          <h3 id='progressValuesCss'>0<small>%</small></h3>
-        </div>
-      </div>
-      <div class="boxContent" style="--clr: #00c2fd;">
-        <div class="svg">
-          <box-icon name='javascript' type='logo' animation='flashing' color='#0ff51d'></box-icon>
-          <div class='textxml'>JavaScript</div>
-        </div>
-        <div class="circle" style="--clr: #00c2fd;">
-          <h3 id='progressValuesJs'>0<small>%</small></h3>
+      <div data-aos="flip-left">
+        <div class="boxContent" style="--clr: #fd8f00;">
+          <div class="svg">
+            <ion-icon style="font-size: 2rem;" name="logo-html5"></ion-icon>
+            <div class='textxml' name="htmltxt">HTML</div>
+          </div>
+          <div class="circle" style="--clr: #fd8f00;">
+            <h3 id='progressValues'>0<small>%</small></h3>
+          </div>
         </div>
       </div>
 
-      <div class="boxContent" style="--clr: #fd00d3;">
-        <div class="svg">
-          <box-icon name='javascript' type='logo' animation='flashing' color='#0ff51d'></box-icon>
-          <div class='textxml'>REACT</div>
+      <div data-aos="flip-left">
+        <div class="boxContent" style="--clr: #00fd22;">
+          <div class="svg">
+            <ion-icon style="font-size: 2rem;" name="logo-css3"></ion-icon>
+            <div class='textxml'>CSS/SASS</div>
+          </div>
+          <div class="circle" style="--clr: #00fd22;">
+            <h3 id='progressValuesCss'>0<small>%</small></h3>
+          </div>
         </div>
-        <div class="circle" style="--clr: #fd00d3;">
-          <h3 id='progressValuesFour'>0<small>%</small></h3>
+      </div>
+
+      <div data-aos="flip-right">
+        <div class="boxContent" style="--clr: #00c2fd;">
+          <div class="svg">
+            <ion-icon style="font-size: 2rem;" name="logo-javascript"></ion-icon>
+            <div class='textxml'>JavaScript</div>
+          </div>
+          <div class="circle" style="--clr: #00c2fd;">
+            <h3 id='progressValuesJs'>0<small>%</small></h3>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="flip-right">
+        <div class="boxContent" style="--clr: #fd00d3;">
+          <div class="svg">
+            <ion-icon style="font-size: 2rem;" name="logo-react"></ion-icon>
+            <div class='textxml'>REACT</div>
+          </div>
+          <div class="circle" style="--clr: #fd00d3;">
+            <h3 id='progressValuesFour'>0<small>%</small></h3>
+          </div>
         </div>
       </div>
       <!-- I've been teaching myself programming for the past year.
@@ -187,127 +192,102 @@
   <!-- Skills/ -->
 
   <!-- Projects -->
-  <section id="Project" class="Projects">
-    <div class="project_list">
-      <div class="card">
-        <a href="https://arul9976.github.io/MyFile/" target="_blank">
-          <div class="imgSi">
-            <img src="./images/Screenshot 08-09-2023 12_46_51.png" alt="">
-            <h2>calcuLator</h2>
-          </div>
-          <div class="content">
-            <div class="details">
-              <h2>calcuLator</h2>
-              <p>
-                My First Ever Project Upon I,m Staring
-              </p>
+  <section id="Project" data-aos="zoom-out-right" class="Projects">
+
+    <div data-aos="zoom-out-right" class="Project-container">
+      <h2>My Projects</h2>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="imgSi">
+              <img style="--w: auto" src="images/Screenshot 08-09-2023 12_46_51.png" alt="">
+            </div>
+            <div class="content">
               <h5>
-                Free online character counter tool that calculates and counts the number of characters, words,
-                sentences, and paragraphs in your text.
+                Free online character counter tool that calculates and counts the number of
               </h5>
+              <a href="/calculator/calculator.html" target="_blank">
+                <h3>calculator<ion-icon name="open-outline"></ion-icon></h3>
+              </a>
             </div>
           </div>
-        </a>
-      </div>
-      <div class="card">
-        <div class="imgSi">
-          <img src="./images/Screenshot 08-09-2023 12_46_51.png" alt="">
-          <h2>calcuLator</h2>
-        </div>
-        <div class="content">
-          <div class="details">
-            <h2>calcuLator</h2>
-            <p>
-              My First Ever Project Upon I,m Staring
-            </p>
-            <h5>
-              Free online character counter tool that calculates and counts the number of characters, words,
-              sentences,
-              and paragraphs in your text.
-            </h5>
+
+          <div class="swiper-slide">
+            <div class="imgSi">
+              <img style="--w: 100%" src="images/project2.png" alt="">
+            </div>
+            <div class="content">
+              <h5>
+                Free online character counter tool that calculates and counts the number of
+              </h5>
+              <a href="/calculator/new.html" target="_blank">
+                <h3>calculator For Me<ion-icon name="open-outline"></ion-icon></h3>
+              </a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="imgSi">
+              <img style="--w: 100%" src="images/project3.png" alt="">
+            </div>
+            <div class="content">
+              <h5>
+                Free online character counter tool that calculates and counts the number of
+              </h5>
+              <a href="/arul'sproject/arul.html" target="_blank">
+                <h3>Login Page<ion-icon name="open-outline"></ion-icon></h3>
+              </a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="imgSi">
+              <img style="--w: auto" src="images/Screenshot 08-09-2023 12_46_51.png" alt="">
+            </div>
+            <div class="content">
+              <h5>
+                Free online character counter tool that calculates and counts the number of
+              </h5>
+              <a href="/calculator/calculator.html" target="_blank">
+                <h3>calculator<ion-icon name="open-outline"></ion-icon></h3>
+              </a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="imgSi">
+              <img style="--w: auto" src="images/Screenshot 08-09-2023 12_46_51.png" alt="">
+            </div>
+            <div class="content">
+              <h5>
+                Free online character counter tool that calculates and counts the number of
+              </h5>
+              <a href="/calculator/calculator.html" target="_blank">
+                <h3>calculator<ion-icon name="open-outline"></ion-icon></h3>
+              </a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="imgSi">
+              <img style="--w: auto" src="images/Screenshot 08-09-2023 12_46_51.png" alt="">
+            </div>
+            <div class="content">
+              <h5>
+                Free online character counter tool that calculates and counts the number of
+              </h5>
+              <a href="/calculator/calculator.html" target="_blank">
+                <h3>calculator<ion-icon name="open-outline"></ion-icon></h3>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="imgSi">
-          <img src="./images/Screenshot 08-09-2023 12_46_51.png" alt="">
-          <h2>calcuLator</h2>
-        </div>
-        <div class="content">
-          <div class="details">
-            <h2>calcuLator</h2>
-            <p>
-              My First Ever Project Upon I,m Staring
-            </p>
-            <h5>
-              Free online character counter tool that calculates and counts the number of characters, words,
-              sentences,
-              and paragraphs in your text.
-            </h5>
-          </div>
-        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div id="next" class="swiper-button-next"></div>
       </div>
 
-      <div class="card">
-        <div class="imgSi">
-          <img src="./images/Screenshot 08-09-2023 12_46_51.png" alt="">
-          <h2>calcuLator</h2>
-        </div>
-        <div class="content">
-          <div class="details">
-            <h2>calcuLator</h2>
-            <p>
-              My First Ever Project Upon I,m Staring
-            </p>
-            <h5>
-              Free online character counter tool that calculates and counts the number of characters, words,
-              sentences,
-              and paragraphs in your text.
-            </h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="imgSi">
-          <img src="./images/Screenshot 08-09-2023 12_46_51.png" alt="">
-          <h2>calcuLator</h2>
-        </div>
-        <div class="content">
-          <div class="details">
-            <h2>calcuLator</h2>
-            <p>
-              My First Ever Project Upon I,m Staring
-            </p>
-            <h5>
-              Free online character counter tool that calculates and counts the number of characters, words,
-              sentences,
-              and paragraphs in your text.
-            </h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="imgSi">
-          <img src="./images/Screenshot 08-09-2023 12_46_51.png" alt="">
-          <h2>calcuLator</h2>
-        </div>
-        <div class="content">
-          <div class="details">
-            <h2>calcuLator</h2>
-            <p>
-              My First Ever Project Upon I,m Staring
-            </p>
-            <h5>
-              Free online character counter tool that calculates and counts the number of characters, words,
-              sentences,
-              and paragraphs in your text.
-            </h5>
-          </div>
-        </div>
-      </div>
-    </div>
     </div>
 
   </section>
@@ -339,12 +319,24 @@
     </div>
     <div class="foot f3">
       <h1>Contact</h1>
+
       <p>
-        <a href=""><i class="bi bi-telephone"></i></a>
-        +91 6379112755
+        <i class="bi bi-telephone-fill"></i>
+        +91 <span id="copyText">6379112755</span>
+        <icon class="copy" id="copy" style="display: flex; align-items: center; justify-content: center;">
+          <ion-icon style="cursor: pointer;" name="copy-outline"></ion-icon>
+        </icon>
+        
       </p>
-      <p><a href=""><i class="bi bi-google"></i></a>
-        arunmicheal8@gmail.com</p>
+
+      <p>
+        <a target="_blank"
+          href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKHRLxcsGLFZDRGQQCGqgQScfcXHSDWcDSrqthtCflrdWfMfVbqGCQPvCXpqBDDvwbcMSNB">
+          <i class="bi bi-google"></i>
+          arunmicheal8@gmail.com
+        </a>
+      </p>
+
     </div>
   </footer>
 
@@ -359,10 +351,58 @@
     crossorigin="anonymous"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-
+  <!-- aos -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: false,
+    });
+  </script>
+  <!-- aos -->
   <script src="script.js">
   </script>
+
+  <!-- swiper js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        10: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        1124: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      },
+    });
+  </script>
+  <!-- copy polyfill -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.8.6/clipboard-polyfill.js"></script>
 </body>
 
 </html>
