@@ -198,7 +198,7 @@ header .navitem .active::before {
     display: grid;
     align-items: center;
     justify-content: center;
-    right: 1rem;
+    right: 20px;
     width: 20rem;
     height: 0;
     top: 4.2rem;
@@ -212,8 +212,8 @@ header .navitem .active::before {
   }
 }
 @media (max-width: 600px) {
-  .nav_list {
-    width: 50%;
+  .show {
+    width: 15rem;
   }
 }
 .toggle_set {

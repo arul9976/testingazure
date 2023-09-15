@@ -4,7 +4,7 @@ $color: #155de3;
 $color1: #f15512;
 $linear: linear-gradient(to right, #3b12f1, #e70dcd);
 
-// version 2.0.1
+// version 2.0.2
 // margin
 $margin: 15px;
 
@@ -280,7 +280,7 @@ header {
         display: grid;
         align-items: center;
         justify-content: center;
-        right: 1rem;
+        right: 20px;
         width: 20rem;
         height: 0;
         top: 4.2rem;
@@ -295,12 +295,10 @@ header {
 
     }
 }
-
 @media (max-width: 600px) {
-    .nav_list {
-        width: 50%;
+    .show{
+        width: 15rem;
     }
-
 }
 
 .toggle_set {
