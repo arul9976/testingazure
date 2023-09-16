@@ -21,6 +21,22 @@ function btnToggle(navId, toggleId) {
     })
   }
 
+  window.onscroll = () => {
+    Section.forEach(SectionOn => {
+      let top = window.scrollY;
+      let offset = SectionOn.offsetTop - 60;
+      let height = SectionOn.offsetHeight;
+      let id = SectionOn.getAttribute('id');
+
+      if (top >= offset && top < offset + height) {
+        NavLink.forEach(links => {
+          document.querySelector('.nav_list a[href*=' + id + ']').classList.add('active');
+          links.classList.remove('active');
+        });
+      }
+    });
+  };
+
   NavLink.forEach(Nav => {
     Nav.addEventListener('click', () => {
       document.querySelector('.active')?.classList.remove('active')
@@ -31,26 +47,6 @@ function btnToggle(navId, toggleId) {
     });
 
   });
-
-  window.onscroll = () => {
-    Section.forEach(SectionOn => {
-      let top = window.scrollY;
-      let offset = SectionOn.offsetTop - 60;
-      let height = SectionOn.offsetHeight;
-      let id = SectionOn.getAttribute('id');
-
-
-      if (top >= offset && top < offset + height) {
-        NavLink.forEach(link => {
-          // document.querySelector('.nav_list .navitem[class*=' + id + ']').classList.add('active');
-          document.querySelector('.nav_list a[href*=' + id + ']').classList.add('active');
-          link.classList.remove('active');
-        });
-      }
-    });
-  };
-
-
 
 }
 btnToggle('myNavbar', 'btn')
@@ -183,30 +179,41 @@ function progress() {
 }
 progress()
 
+function myCopy() {
+  const Id = document.querySelectorAll(".copy")
 
-document.getElementById("copy").onclick = function(){
-  var copyText = document.getElementById("copyText");
-  clipboard.writeText(copyText.textContent);
+  Id.forEach(ids => {
+    ids.addEventListener('click', () => {
+      document.querySelector('.Iactive')?.classList.remove('Iactive')
+      ids.classList.add('Iactive')
+
+      const Copy = document.querySelectorAll('.Iactive');
+      Copy.forEach(ForCopy => {
+        clipboard.writeText(ForCopy.title)
+        ForCopy.innerHTML = "<ion-icon id='copy' name='checkmark-outline'></ion-icon>";
+
+        setTimeout(() => {
+          ForCopy.classList.replace('Iactive', 'Active')
+          ForCopy.innerHTML = "<ion-icon id='copy' name='copy-outline'></ion-icon>";
+        }, 3000);
+
+        setTimeout(() => {
+          ForCopy.classList.remove("Active")
+        }, 4000);
+
+      });
+
+    });
+
+  });
+
 }
+myCopy()
 
-const copyIcon = document.getElementById('copy');
-
-
-copyIcon.addEventListener('click', () => {
-  copyIcon.classList.add("Iactive");
-
-  setTimeout(() => {
-    const valueNew = copyIcon.innerHTML = "<ion-icon id='copy' name='checkmark-outline'></ion-icon>";
-  }, 100)
- 
- 
-
-  setTimeout(() => {
-    const valueNew = copyIcon.innerHTML = "<ion-icon id='copy' name='copy-outline'></ion-icon>";
-    copyIcon.classList.remove("Iactive")
-    copyIcon.classList.add("Active")
-  }, 3000);
-  
-
-})
-
+//SocialElement
+const socialEl = document.getElementById('SocialEl').cloneNode(true);
+const footSocial = document.getElementById('Footsocial');
+const homeSocial = document.querySelector('.homeSocial');
+const FootEl = homeSocial.appendChild(socialEl).cloneNode(true);
+footSocial.appendChild(FootEl);
+///////////////////////////////

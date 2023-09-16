@@ -35,25 +35,25 @@
           <li class="navitem"><a href="#Home">Home</a></li>
           <li class="navitem"><a href="#about">About</a></li>
           <li class="navitem"><a href="#skill">Skills</a></li>
-          <li class="navitem"><a href="#Project">Projects</a></li>
-          <li class="navitem" style="display: none;"><a href="#C"></a></li>
+          <li class="navitem"><a href="#project">Projects</a></li>
+          <li class="navitem" style="display: none;"><a href="#project"></a></li>
         </ul>
       </div>
     </div>
 
     <div class="social">
       <div data-aos="fade-left">
-        <ul>
-          <a href="https://github.com/arul9976/"><i class="bi bi-github"></i></a>
-          <a href="https://www.instagram.com/mr_arulkumar_03/"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/arul-kumar-m-494791254/"><i class="bi bi-linkedin"></i></a>
+        <ul id="SocialEl">
+          <a href="https://github.com/arul9976/" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.instagram.com/mr_arulkumar_03/" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/arul-kumar-m-494791254/" target="_blank"><i class="bi bi-linkedin"></i></a>
         </ul>
       </div>
     </div>
 
 
     <div class="toggle_set">
-      <button id="btn" class="toggle">
+      <button style="outline: none; border: none;" id="btn" class="toggle">
         <b class="on"><i class="bi bi-text-right"></i></b>
         <b class="off"><i class="bi bi-x-lg"></i></b>
       </button>
@@ -74,7 +74,7 @@
 
       <br>
 
-      <a href="#" class="btn btn-outline-info">Download CV</a>
+      <a href="Arul CV.pdf"download target="_blank" class="btn btn-outline-info">Download CV</a>
     </div>
 
     <div class="clearfix">
@@ -82,11 +82,7 @@
     </div>
 
     <div class="homeSocial" data-aos="fade-left">
-      <ul>
-        <a href="https://github.com/arul9976/"><i class="bi bi-github"></i></a>
-        <a href="https://www.instagram.com/mr_arulkumar_03/"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/arul-kumar-m-494791254/"><i class="bi bi-linkedin"></i></a>
-      </ul>
+      <!-- Js -->
     </div>
     </div>
   </section>
@@ -192,7 +188,7 @@
   <!-- Skills/ -->
 
   <!-- Projects -->
-  <section id="Project" data-aos="zoom-out-right" class="Projects">
+  <section id="project" class="Projects">
 
     <div data-aos="zoom-out-right" class="Project-container">
       <h2>My Projects</h2>
@@ -302,12 +298,8 @@
         cum sapiente laborum quod odio nesciunt neque explicabo magni aliquam eum quas
         consequuntur.</p>
 
-      <div class="social">
-        <ul>
-          <a href="https://github.com/arul9976/"><i class="bi bi-github"></i></a>
-          <a href="https://www.instagram.com/mr_arulkumar_03/"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/arul-kumar-m-494791254/"><i class="bi bi-linkedin"></i></a>
-        </ul>
+      <div id="Footsocial" class="social">
+        <!-- Js -->
       </div>
     </div>
     <div class="foot f2">
@@ -320,22 +312,22 @@
     <div class="foot f3">
       <h1>Contact</h1>
 
-      <p>
-        <i class="bi bi-telephone-fill"></i>
-        +91 <span id="copyText">6379112755</span>
-        <icon class="copy" id="copy" style="display: flex; align-items: center; justify-content: center;">
-          <ion-icon style="cursor: pointer;" name="copy-outline"></ion-icon>
-        </icon>
-        
-      </p>
 
       <p>
-        <a target="_blank"
-          href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKHRLxcsGLFZDRGQQCGqgQScfcXHSDWcDSrqthtCflrdWfMfVbqGCQPvCXpqBDDvwbcMSNB">
-          <i class="bi bi-google"></i>
-          arunmicheal8@gmail.com
-        </a>
+        <i class="bi bi-telephone-fill"></i>
+        <b>+91</b> <span class="copyText">6379112755</span>
+        <icon class="copy" title="6379112755" style="display: flex; align-items: center; justify-content: center;">
+          <ion-icon style="cursor: pointer;" name="copy-outline"></ion-icon>
+        </icon>
       </p>
+      <p>
+        <i class="bi bi-google"></i>
+        <span class="copyText">arunmicheal8@gmail.com</span>
+        <icon class="copy" title="arunmicheal8@gmail.com" style="display: flex; align-items: center; justify-content: center;">
+          <ion-icon style="cursor: pointer;" name="copy-outline"></ion-icon>
+        </icon>
+      </p>
+
 
     </div>
   </footer>

@@ -67,13 +67,6 @@ header .navitem {
   background: #fff;
   cursor: pointer;
 }
-header .bodyDark .navitem {
-  background: #000;
-}
-header .bodyDark a,
-header .bodyDark .navitem a {
-  color: #fff;
-}
 header .navitem a {
   padding: 10px 40px;
   font-weight: 700;
@@ -370,10 +363,6 @@ header .navitem .active::before {
   }
 }
 
-.bodyDark .home .clearfix {
-  background: #000;
-}
-
 .home_text {
   transition: ease 0.5s;
   overflow: hidden;
@@ -456,10 +445,6 @@ header .navitem .active::before {
   transform: scaleY(1.1);
   transition: ease 0.5s;
   font-weight: bold;
-}
-
-.bodyDark .progress_bar .box .boxContent {
-  background: #000;
 }
 
 .progress_bar {
@@ -719,31 +704,11 @@ header .navitem .active::before {
   transform: perspective(1000px) rotateX(4.8deg) rotateY(10.23deg) scale3d(1, 1, 1, 1);
 }
 
-.bodyDark .sub-box:hover {
-  background: #3d3c3c;
-}
-
-.bodyDark footer {
-  background: #252525;
-}
-.bodyDark footer p,
-.bodyDark footer a {
-  color: #f5f5f5;
-}
-.bodyDark footer .foot:hover {
-  box-shadow: 0 35px 85px rgba(10, 15, 70, 0.07);
-  background: #3d3c3c;
-}
-
 @media (max-width: 850px) {
   footer {
     display: grid !important;
   }
 }
-.nav-itemTrash {
-  display: none;
-}
-
 footer {
   min-width: 100%;
   height: auto;
@@ -776,6 +741,7 @@ footer p ion-icon {
   padding: 0 0.5rem;
   color: #000;
   font-size: 1em;
+  cursor: pointer;
 }
 footer p .copy.Iactive {
   transform: rotate(360deg);
@@ -788,7 +754,7 @@ footer p .copy.Active {
 footer p:hover {
   color: #cf07f7;
 }
-footer p:hover i {
+footer p:hover i, footer p:hover span, footer p:hover b {
   color: #cf07f7;
 }
 footer p:hover ion-icon:hover {
@@ -837,4 +803,33 @@ footer .f1 {
 }
 footer .f2 {
   width: 22rem;
+}
+
+.bodyDark .navitem {
+  background: #000;
+}
+.bodyDark .navitem a {
+  color: #fff;
+}
+.bodyDark .home .clearfix {
+  background: #000;
+}
+.bodyDark .progress_bar .box .boxContent {
+  background: #000;
+}
+.bodyDark .sub-box:hover {
+  background: #3d3c3c;
+}
+.bodyDark footer {
+  background: #252525;
+}
+.bodyDark footer p,
+.bodyDark footer a,
+.bodyDark footer ion-icon,
+.bodyDark footer i {
+  color: #f5f5f5;
+}
+.bodyDark footer .foot:hover {
+  box-shadow: 0 35px 85px rgba(10, 15, 70, 0.07);
+  background: #3d3c3c;
 }/*# sourceMappingURL=style1.css.map */

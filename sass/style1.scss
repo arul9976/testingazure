@@ -25,7 +25,6 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    // overflow: hidden !important;
 
 }
 
@@ -34,6 +33,7 @@ section {
     color: #fff;
     transition: .20s;
 }
+
 
 // .bodyDark .sticky {
 //     background: #000;
@@ -97,15 +97,6 @@ header {
         background: #fff;
         cursor: pointer;
 
-    }
-
-    .bodyDark .navitem {
-        background: #000;
-    }
-
-    .bodyDark a,
-    .bodyDark .navitem a {
-        color: #fff;
     }
 
     .navitem a {
@@ -295,8 +286,9 @@ header {
 
     }
 }
+
 @media (max-width: 600px) {
-    .show{
+    .show {
         width: 15rem;
     }
 }
@@ -468,13 +460,6 @@ header {
 
 }
 
-.bodyDark .home {
-    .clearfix {
-        background: #000;
-    }
-}
-
-
 
 .home_text {
     transition: ease .50s;
@@ -566,15 +551,6 @@ header {
         font-weight: bold;
 
     }
-}
-
-.bodyDark .progress_bar {
-    .box {
-        .boxContent {
-            background: #000;
-        }
-    }
-
 }
 
 // Skill
@@ -878,32 +854,10 @@ header {
 
 }
 
-.bodyDark .sub-box:hover {
-    background: #3d3c3c;
-}
-
-.bodyDark footer {
-    background: #252525;
-
-    p,
-    a {
-        color: #f5f5f5;
-    }
-
-    .foot:hover {
-        box-shadow: 0 35px 85px rgba(10, 15, 70, 0.07);
-        background: #3d3c3c;
-    }
-}
-
 @media (max-width: 850px) {
     footer {
         display: grid !important;
     }
-}
-
-.nav-itemTrash {
-    display: none;
 }
 
 footer {
@@ -938,40 +892,35 @@ footer {
         }
 
         i,
-        ion-icon{
+        ion-icon {
             padding: 0 0.5rem;
             color: #000;
             font-size: 1em;
+            cursor: pointer;
         }
-        .copy.Iactive{
+
+        .copy.Iactive {
             transform: rotate(360deg);
             transition: .40s;
         }
-        .copy.Active{
+
+        .copy.Active {
             transform: rotate(-360deg);
             transition: .40s;
         }
 
     }
 
-    p:hover {
+    p:hover{
         color: #cf07f7;
-
-        i {
+        i, span, b {
             color: #cf07f7;
         }
 
-        ion-icon:hover{
+        ion-icon:hover {
             color: #2ef506;
         }
     }
-
-
-
-
-
-
-
 
     .foot {
         width: 20rem;
@@ -1028,3 +977,51 @@ footer {
 }
 
 //about
+
+
+
+//DarkCSS
+.bodyDark {
+    .navitem {
+        background: #000;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .home {
+        .clearfix {
+            background: #000;
+        }
+    }
+
+    .progress_bar {
+        .box {
+            .boxContent {
+                background: #000;
+            }
+        }
+
+    }
+
+    .sub-box:hover {
+        background: #3d3c3c;
+    }
+
+    footer {
+        background: #252525;
+
+        p,
+        a,
+        ion-icon,
+        i {
+            color: #f5f5f5;
+        }
+
+        .foot:hover {
+            box-shadow: 0 35px 85px rgba(10, 15, 70, 0.07);
+            background: #3d3c3c;
+        }
+    }
+}
