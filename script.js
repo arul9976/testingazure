@@ -216,4 +216,31 @@ const footSocial = document.getElementById('Footsocial');
 const homeSocial = document.querySelector('.homeSocial');
 const FootEl = homeSocial.appendChild(socialEl).cloneNode(true);
 footSocial.appendChild(FootEl);
+
+
+//mailbar
+const mailBar = document.getElementById('mailbar').cloneNode(true)
+
+console.log(mailBar);
+// const clonemail = document.querySelector('.copybar')
+// clonemail.appendChild(mailBar)
+
 ///////////////////////////////
+
+//about
+
+const myAbout = ["I've been teaching myself programming for the past year. While I'm not a college graduate and have no plans to attend ",
+  "I am dedicated to expanding my knowledge of both front - end and back - end programming.",
+  "Currently, I'm gradually learning how to create and manage websites, as well as picking up some React skills.",
+  "I have some previous experience with Python, having learned the basics during my twelfth - grade studies."
+]
+
+const aboutLI = document.querySelector('.text');
+
+// myAbout.forEach(eachAbout => {
+//   const ListEl = document.createElement('li');
+//   aboutLI.appendChild(ListEl)
+//   ListEl.append(eachAbout)
+
+// });
+  // console.dir(myAbout[0]);

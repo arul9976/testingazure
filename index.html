@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -16,29 +16,41 @@
 </head>
 
 <body id="bodyLD" class="body">
+  <!-- <header class="sticky-top">
 
-  <header class="sticky-top">
+
+    </nav>
+  </header> -->
+  <nav class="position-fixed">
     <div data-aos="fade-right">
       <div class="logo">
-        <a class="navbar-brand" href="#">P<span>.F</span>olio</a>
+        <a href="#">P<span>.F</span>olio</a>
       </div>
     </div>
-
-    <div class="dark">
-      <b class="moon"><i class="bi bi-moon-stars-fill"></i></b>
-      <b class="sun"><i class="bi bi-sun-fill"></i></b>
-    </div>
-
     <div data-aos="fade-down">
-      <div class="nav-items">
-        <ul class="nav_list" id="myNavbar">
-          <li class="navitem"><a href="#Home">Home</a></li>
-          <li class="navitem"><a href="#about">About</a></li>
-          <li class="navitem"><a href="#skill">Skills</a></li>
-          <li class="navitem"><a href="#project">Projects</a></li>
-          <li class="navitem" style="display: none;"><a href="#project"></a></li>
-        </ul>
-      </div>
+      <ul class="nav_list" id="myNavbar">
+        <div class="profile">
+          <div class="profile-card bg-info px-4 py-1 rounded h5"><img src="images/arul.png" style="width: 40px;"
+              class="rounded-circle bg-success mx-1" alt="">Arulkumar M</div>
+          <!---->
+        </div>
+
+        <li class="navitem"><a href="#Home">Home</a></li>
+        <li class="navitem"><a href="#about">About</a></li>
+        <li class="navitem"><a href="#skill">Skills</a></li>
+        <li class="navitem"><a href="#project">Projects</a></li>
+        <li class="navitem" style="display: none;"><a href="#project"></a></li>
+
+        <div class="copybar">
+          <h3>Contact</h3>
+          <h5 class="d-inline-flex align-items-center justify-content-center focus-ring bg-warning p-1 rounded "><a
+              href="#" class="text-secondary-emphasis text-decoration-none"><i class="bi bi-telephone"></i>+91
+              <span>6379112755</span></a></h5>
+          <h5 class="d-inline-flex align-items-center justify-content-center focus-ring bg-warning p-1 rounded"><a
+              href="#" class="text-secondary-emphasis text-decoration-none"><i
+                class="bi bi-google"></i>arunmicheal8@gmail.com</a></h5>
+        </div>
+      </ul>
     </div>
 
     <div class="social">
@@ -46,11 +58,11 @@
         <ul id="SocialEl">
           <a href="https://github.com/arul9976/" target="_blank"><i class="bi bi-github"></i></a>
           <a href="https://www.instagram.com/mr_arulkumar_03/" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/arul-kumar-m-494791254/" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/arul-kumar-m-494791254/" target="_blank"><i
+              class="bi bi-linkedin"></i></a>
         </ul>
       </div>
     </div>
-
 
     <div class="toggle_set">
       <button style="outline: none; border: none;" id="btn" class="toggle">
@@ -59,31 +71,33 @@
       </button>
     </div>
 
-
-  </header>
-
-
-  <section class="home" id="Home">
-    <div data-aos="fade-down" class="home_text">
-      <h3>Hi ,<span>I'm</span></h3>
-      <h1 class="myName">Arulkumar M</h1>
-      <h5>From<span>Tenkasi</span></h5>
-      <p class="lh-lg"><strong>I'm Completed 12th Grade in Computer Science Group at<span> <br> Ramaswamy Pillai
-            Higher Secondary School, Ilanji</span> <br> in <span>2021-2022</span></strong>
-      </p>
-
-      <br>
-
-      <a href="Arul CV.pdf"download target="_blank" class="btn btn-outline-info">Download CV</a>
+    <div class="dark">
+      <b class="moon"><i class="bi bi-moon-stars-fill"></i></b>
+      <b class="sun"><i class="bi bi-sun-fill"></i></b>
     </div>
+  </nav>
 
-    <div class="clearfix">
-      <img data-aos="fade-down" class="img-fluid" src="./images/arul.png" alt="">
-    </div>
+  <section id="Home">
+    <div class="home">
+      <div data-aos="fade-down" class="home_text">
+        <h3>Hi ,<span>I'm</span></h3>
+        <h1 class="myName">Arulkumar M</h1>
+        <h5>From<span>Tenkasi</span></h5>
+        <p class="lh-lg"><strong>I'm Completed 12th Grade in Computer Science Group at<span> <br> Ramaswamy Pillai
+              Higher Secondary School, Ilanji</span> <br> in <span>2021-2022</span></strong>
+        </p>
 
-    <div class="homeSocial" data-aos="fade-left">
-      <!-- Js -->
-    </div>
+        <br>
+
+        <a href="Arul CV.pdf" download target="_blank" class="btn btn-outline-info">Download CV</a>
+      </div>
+
+      <div class="clearfix">
+        <img data-aos="fade-down" class="img-fluid" src="./images/arul.png" alt="">
+      </div>
+      <div class="homeSocial" data-aos="fade-left">
+        <!-- Js -->
+      </div>
     </div>
   </section>
 
@@ -91,30 +105,35 @@
 
   <div class="sub-service">
     <div class="item">
-      <div class="sub-box">
-        <div class="sub-img">
-          <img src="./images/target.svg.png" alt="">
+      <div data-aos="flip-left">
+        <div class="sub-box">
+          <div class="sub-img">
+            <img src="./images/target.svg.png" alt="">
+          </div>
+          <h3>Pixel Perfect</h3>
+          <p>No one shall be subjected to arbitrary arrest, detention or exile.</p>
         </div>
-        <h3>Pixel Perfect</h3>
-        <p>No one shall be subjected to arbitrary arrest, detention or exile.</p>
       </div>
 
-      <div class="sub-box">
-        <div class="sub-img">
-          <img src="./images/brush.svg.png" alt="">
+      <div data-aos="flip-left">
+        <div class="sub-box">
+          <div class="sub-img">
+            <img src="./images/brush.svg.png" alt="">
+          </div>
+          <h3>High Quality</h3>
+          <p>No one shall be subjected to arbitrary arrest, detention or exile.
+          </p>
         </div>
-        <h3>High Quality</h3>
-        <p>No one shall be subjected to arbitrary arrest, detention or exile.
-        </p>
       </div>
-
-      <div class="sub-box">
-        <div class="sub-img">
-          <img src="./images/energy.svg.png" alt="">
+      <div data-aos="flip-left">
+        <div class="sub-box">
+          <div class="sub-img">
+            <img src="./images/energy.svg.png" alt="">
+          </div>
+          <h3>Awesome Idea</h3>
+          <p>No one shall be subjected to arbitrary arrest, detention or exile.
+          </p>
         </div>
-        <h3>Awesome Idea</h3>
-        <p>No one shall be subjected to arbitrary arrest, detention or exile.
-        </p>
       </div>
     </div>
   </div>
@@ -122,7 +141,25 @@
 
   <!-- About -->
   <section id="about">
+    <div class="about">
+      <div class="about-img">
+        <img src="images/971.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="about_text rounded">
+        <div class="heading">
+          <h1>I'm a <span>Junier Dev</span>loper</h1>
+        </div>
 
+        <div class="text">
+          <li>
+            I've been teaching myself <span>programming</span> for the past year. While I'm not a college graduate and have no plans to attend
+          </li>
+          <li>I am dedicated to expanding my knowledge of both<span> front - end and back - end programming</span>.</li>
+          <li>Currently, I'm gradually learning how to create and manage websites, as well as picking up some <span>React</span> skills.</li>
+          <li>I have some previous experience with <span>Python</span>, having learned the basics during my twelfth - grade studies.</li>
+        </div>
+      </div>
+    </div>
   </section>
   <!-- About/ -->
 
@@ -312,21 +349,24 @@
     <div class="foot f3">
       <h1>Contact</h1>
 
+      <div id="mailbar">
+        <p>
+          <i class="bi bi-telephone-fill"></i>
+          <b>+91</b> <span class="copyText">6379112755</span>
+          <icon class="copy" title="6379112755" style="display: flex; align-items: center; justify-content: center;">
+            <ion-icon style="cursor: pointer;" name="copy-outline"></ion-icon>
+          </icon>
+        </p>
+        <p>
+          <i class="bi bi-google"></i>
+          <span class="copyText">arunmicheal8@gmail.com</span>
+          <icon class="copy" title="arunmicheal8@gmail.com"
+            style="display: flex; align-items: center; justify-content: center;">
+            <ion-icon style="cursor: pointer;" name="copy-outline"></ion-icon>
+          </icon>
+        </p>
+      </div>
 
-      <p>
-        <i class="bi bi-telephone-fill"></i>
-        <b>+91</b> <span class="copyText">6379112755</span>
-        <icon class="copy" title="6379112755" style="display: flex; align-items: center; justify-content: center;">
-          <ion-icon style="cursor: pointer;" name="copy-outline"></ion-icon>
-        </icon>
-      </p>
-      <p>
-        <i class="bi bi-google"></i>
-        <span class="copyText">arunmicheal8@gmail.com</span>
-        <icon class="copy" title="arunmicheal8@gmail.com" style="display: flex; align-items: center; justify-content: center;">
-          <ion-icon style="cursor: pointer;" name="copy-outline"></ion-icon>
-        </icon>
-      </p>
 
 
     </div>
@@ -338,8 +378,11 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

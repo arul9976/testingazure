@@ -3,8 +3,6 @@
 * {
   font-family: "itim", cursive;
   scroll-behavior: smooth;
-  list-style: none;
-  text-decoration: none;
 }
 
 body {
@@ -25,105 +23,180 @@ section {
   transition: 0.2s;
 }
 
-header {
-  position: fixed !important;
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  min-width: 100%;
   height: auto;
-  padding: 10px 6%;
+  z-index: 1000;
 }
-header .logo {
-  background: linear-gradient(to right, #8404ec, #cf07f7);
-  padding: 0.5rem 2rem;
-  border-radius: 40px;
+
+.logo {
+  margin: 20px 20px;
 }
-header .logo a {
+.logo a {
   font-size: 1.3rem;
   letter-spacing: 3px;
   color: #fff;
+  background: linear-gradient(to right, #8404ec, #cf07f7);
+  border-radius: 40px;
+  padding: 10px 30px;
+  text-decoration: none;
 }
-header .logo a span {
+.logo a span {
   color: #f15512;
 }
-header .nav_list {
+
+.nav_list {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0px;
   padding: 0px;
 }
-@media (max-width: 989px) {
-  header .nav_list {
-    display: grid;
-  }
-}
-header .navitem {
+
+.navitem {
   padding: 10px 10px;
   margin: 0 10px;
   position: relative;
   border-radius: 15px;
   background: #fff;
   cursor: pointer;
+  list-style: none;
+  text-decoration: none;
 }
-header .navitem a {
+
+.navitem a {
   padding: 10px 40px;
   font-weight: 700;
   color: #000;
   font-size: 15px;
   text-decoration: none;
 }
-header .navitem a:hover::before {
+
+.navitem a:hover::before {
   background: conic-gradient(#fff 2deg, red 100deg, #fff 90deg, #fff 190deg, #fff 200deg, red 210deg, red 280deg, #fff 90deg, #fff 150deg);
 }
-header .navitem a::before {
-  position: absolute;
-  content: "";
-  width: calc(100% + 4px);
-  height: calc(100% + 6px);
-  background: conic-gradient(#fff 2deg, #f58b00 100deg, #fff 90deg, #fff 190deg, #fff 200deg, #f58b00 210deg, #f58b00 280deg, #fff 90deg, #fff 150deg);
-  z-index: -1;
-  bottom: -3px;
-  border-radius: 17px;
-  transition: 0.4s;
-  left: -2px;
+
+@media (min-width: 959px) {
+  .navitem a::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 4px);
+    height: calc(100% + 6px);
+    background: conic-gradient(#fff 2deg, #f58b00 100deg, #fff 90deg, #fff 190deg, #fff 200deg, #f58b00 210deg, #f58b00 280deg, #fff 90deg, #fff 150deg);
+    z-index: -1;
+    bottom: -3px;
+    border-radius: 17px;
+    transition: 0.4s;
+    left: -2px;
+  }
+  .navitem a:hover::before {
+    animation: animate 3s linear infinite;
+    background: conic-gradient(from var(--b), #fff 2deg, #06deee 100deg, #fff 90deg, #fff 190deg, #fff 200deg, #06deee 210deg, #06deee 280deg, #fff 90deg, #fff 150deg);
+  }
+  .navitem:hover a {
+    font-size: 25px;
+    color: #06deee;
+    transition: ease 0.3s;
+    font-weight: 100;
+  }
 }
-header .navitem:hover a {
-  font-size: 25px;
-  color: #06deee;
-  transition: ease 0.3s;
-  font-weight: 100;
+.profile,
+.copybar {
+  display: none;
 }
-header .navitem .active {
-  font-size: 25px;
-  background: linear-gradient(to right, #8404ec, #f58b00);
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
+
+@media (max-width: 989px) {
+  .nav_list {
+    position: absolute;
+    right: -500px;
+    display: block;
+    top: 40px;
+    width: 20rem;
+    height: 80vh;
+    transition: 0.5s;
+    background: linear-gradient(90deg, #3b12f1, #e315d9);
+    border-radius: 10px;
+  }
+  .nav_list .profile {
+    position: relative;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .nav_list .profile::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background: gray;
+    bottom: 0px;
+  }
+  .nav_list .copybar {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav_list .copybar h5:hover,
+  .nav_list .profile-card:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+  }
+  .nav_list .copybar::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background: gray;
+    top: 70px;
+    left: 20%;
+    top: -25px;
+  }
+  .nav_list li {
+    margin: 15px 25px;
+    text-align: center;
+  }
+  .nav_list li a {
+    padding: 10px 20px;
+  }
+  .nav_list li:hover {
+    transform: scale(0.9);
+    transition: 0.4s;
+  }
+  .show {
+    right: 0;
+    transition: 0.5s;
+  }
+  .dark {
+    position: fixed;
+    right: 10px;
+  }
 }
-header .navitem .active::before {
-  position: absolute;
-  content: "";
-  width: calc(100% + 4px);
-  height: calc(100% + 6px);
-  background: conic-gradient(from var(--b), #fff 2deg, #cf07f7 100deg, #fff 90deg, #fff 190deg, #fff 200deg, #cf07f7 210deg, #cf07f7 280deg, #fff 90deg, #fff 150deg);
-  z-index: -1;
-  bottom: -3px;
-  border-radius: 17px;
-  transition: 0.4s;
-  left: -2px;
-  animation: animate 3s linear infinite;
+header {
+  background: red;
 }
 
 .dark {
-  position: fixed;
-  right: 10px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin-right: 10px;
 }
 .dark i {
   font-size: 1.5em;
@@ -166,7 +239,7 @@ header .navitem .active::before {
 .social ul a {
   padding: 5px 10px;
   margin: 0 10px;
-  background: linear-gradient(to right, #3b12f1, #e70dcd);
+  background: #3b12f1;
   border-radius: 50%;
   font-weight: bold;
   font-size: 1.5em;
@@ -175,38 +248,13 @@ header .navitem .active::before {
 .social ul a:hover {
   transform: scale(1.2);
   transition: ease 0.3s;
-  background: linear-gradient(to right, #cf07f7, #06f5d5);
+  background: #cf07f7;
   color: #fff;
 }
 
 @media (max-width: 1208px) {
   .social {
     display: none;
-  }
-}
-@media (max-width: 989px) {
-  .nav_list {
-    background: red;
-    position: absolute;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    right: 20px;
-    width: 20rem;
-    height: 0;
-    top: 4.2rem;
-    transition: 0.4s;
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  .show {
-    height: 80vh;
-    top: 4.2rem;
-  }
-}
-@media (max-width: 600px) {
-  .show {
-    width: 15rem;
   }
 }
 .toggle_set {
@@ -231,7 +279,6 @@ header .navitem .active::before {
   }
 }
 .toggle {
-  position: relative;
   outline: none;
   border: none;
   background: #3b12f1;
@@ -271,9 +318,19 @@ header .navitem .active::before {
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 5rem;
-  margin: 0 auto;
-  overflow: hidden;
+  width: 90%;
+  height: 90vh;
+  padding: 0 5%;
+  border: 4px solid #6b6666;
+  border-radius: 10px;
+}
+.home .home_text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 718px) {
   .home .home_text {
@@ -322,7 +379,7 @@ header .navitem .active::before {
   }
 }
 .home .clearfix {
-  padding: 0;
+  padding: 10px;
   margin: auto;
   border-radius: 50%;
   position: relative;
@@ -350,40 +407,27 @@ header .navitem .active::before {
   inset: -2px;
   border-radius: 50%;
 }
-@media (max-width: 1118px) {
-  .home {
-    padding: 20px 10%;
-    transition: 0.4s;
-  }
-}
-@media (min-width: 1120px) {
-  .home {
-    width: -moz-max-content;
-    width: max-content;
-  }
-}
-
-.home_text {
+.home .home_text {
   transition: ease 0.5s;
   overflow: hidden;
 }
-.home_text h3 {
+.home .home_text h3 {
   font-size: 1.4em;
   margin-bottom: 15px;
   transition: ease 0.5s;
 }
 @media (max-width: 550px) {
-  .home_text h3 {
+  .home .home_text h3 {
     font-size: 1.2em;
     transition: ease 0.5s;
   }
 }
-.home_text h3 span {
+.home .home_text h3 span {
   font-size: 1.2em;
   color: #f15512;
   transition: ease 0.5s;
 }
-.home_text h1 {
+.home .home_text h1 {
   font-size: 4em;
   margin-bottom: 15px;
   transition: ease 0.5s;
@@ -392,17 +436,17 @@ header .navitem .active::before {
   width: 90%;
 }
 @media (max-width: 718px) {
-  .home_text h1 {
+  .home .home_text h1 {
     font-size: 2.5em;
     transition: ease 0.5s;
   }
 }
 @media (max-width: 1024px) {
-  .home_text h1 {
+  .home .home_text h1 {
     font-size: 3em;
   }
 }
-.home_text .myName {
+.home .home_text .myName {
   background: linear-gradient(90deg, #cf07f7, #f15512, #155de3, #fd8f00);
   width: -moz-max-content;
   width: max-content;
@@ -411,36 +455,36 @@ header .navitem .active::before {
   color: transparent;
 }
 @media (max-width: 1024px) {
-  .home_text .myName {
+  .home .home_text .myName {
     width: auto;
   }
 }
-.home_text h5 {
+.home .home_text h5 {
   font-size: 1.7em;
   transition: ease 0.5s;
   margin-bottom: 15px;
 }
 @media (max-width: 550px) {
-  .home_text h5 {
+  .home .home_text h5 {
     font-size: 1.4em;
     transition: ease 0.5s;
   }
 }
-.home_text h5 span {
+.home .home_text h5 span {
   font-size: 1.5em;
   color: #f15512;
   transition: ease 0.5s;
 }
-.home_text p {
+.home p {
   cursor: pointer;
   transition: ease 0.5s;
 }
-.home_text p span {
+.home p span {
   color: #f15512;
   font-size: 1.3em;
   transition: ease 0.5s;
 }
-.home_text p:hover {
+.home p:hover {
   color: #3b12f1;
   transform: scaleY(1.1);
   transition: ease 0.5s;
@@ -670,6 +714,11 @@ header .navitem .active::before {
   text-align: center;
   margin-bottom: 50px;
 }
+@media (max-width: 789px) {
+  .item [data-aos=flip-left].aos-animate {
+    background: #fff;
+  }
+}
 
 .sub-box {
   padding: 45px 45px 45px 45px;
@@ -754,7 +803,9 @@ footer p .copy.Active {
 footer p:hover {
   color: #cf07f7;
 }
-footer p:hover i, footer p:hover span, footer p:hover b {
+footer p:hover i,
+footer p:hover span,
+footer p:hover b {
   color: #cf07f7;
 }
 footer p:hover ion-icon:hover {
@@ -805,6 +856,71 @@ footer .f2 {
   width: 22rem;
 }
 
+.about {
+  width: 100%;
+  height: 100dvh;
+  background: url(/My_PortFolio/images/html-.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.about .about-img img {
+  width: 400px;
+  box-shadow: 3px 5px 20px rgb(64, 120, 158);
+}
+@media (max-width: 850px) {
+  .about .about-img img {
+    width: 250px;
+  }
+}
+.about .about_text {
+  color: #fff;
+  width: 50%;
+  height: -moz-min-content;
+  height: min-content;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: circle;
+  background: rgba(0, 0, 0, 0.4);
+}
+.about .about_text span {
+  color: #f15512;
+}
+.about .about_text .text {
+  display: inline-block;
+}
+.about .about_text .text li {
+  padding: 10px 5px;
+  margin: 10px;
+  font-size: larger;
+}
+@media (max-width: 850px) {
+  .about {
+    flex-direction: column;
+  }
+  .about .about_text {
+    width: 90%;
+  }
+  .about .about_text .text li {
+    font-size: 1em;
+  }
+}
+@media (max-height: 700px) {
+  .about .about_text {
+    width: 95%;
+  }
+  .about .about_text .text li {
+    font-size: 0.8em;
+  }
+}
+
 .bodyDark .navitem {
   background: #000;
 }
@@ -819,6 +935,11 @@ footer .f2 {
 }
 .bodyDark .sub-box:hover {
   background: #3d3c3c;
+}
+@media (max-width: 759px) {
+  .bodyDark [data-aos=flip-left].aos-animate {
+    background: #4b4747;
+  }
 }
 .bodyDark footer {
   background: #252525;
