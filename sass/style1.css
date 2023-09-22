@@ -868,6 +868,15 @@ footer .f2 {
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
+.about .about-img p {
+  width: 400px;
+  box-shadow: 3px 5px 20px rgb(64, 120, 158);
+}
+@media (max-width: 850px) {
+  .about .about-img p {
+    width: 250px;
+  }
+}
 .about .about-img img {
   width: 400px;
   box-shadow: 3px 5px 20px rgb(64, 120, 158);
@@ -875,6 +884,7 @@ footer .f2 {
 @media (max-width: 850px) {
   .about .about-img img {
     width: 250px;
+    height: 250px;
   }
 }
 .about .about_text {
@@ -912,7 +922,7 @@ footer .f2 {
     font-size: 1em;
   }
 }
-@media (max-height: 700px) {
+@media (max-width: 380px) {
   .about .about_text {
     width: 95%;
   }

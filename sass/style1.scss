@@ -5,7 +5,7 @@ $color1: #f15512;
 $linear: linear-gradient(to right, #3b12f1, #e70dcd);
 
 
-// version 2.0.2
+// version 2.0.4
 // margin
 $margin: 15px;
 
@@ -1054,7 +1054,7 @@ footer {
 }
 
 //about
-.about{
+.about {
     width: 100%;
     height: 100dvh;
     background: url(/My_PortFolio/images/html-.jpg);
@@ -1064,18 +1064,30 @@ footer {
     align-items: center;
     justify-content: space-evenly;
     column-gap: 10px;
+
     
 
-    .about-img{
-        img{
+    .about-img {
+        p {
             width: 400px;
             box-shadow: 3px 5px 20px rgb(64, 120, 158);
+    
             @media (max-width :850px) {
                 width: 250px;
             }
         }
+        img {
+            width: 400px;
+            box-shadow: 3px 5px 20px rgb(64, 120, 158);
+
+            @media (max-width :850px) {
+                width: 250px;
+                height: 250px;
+            }
+        }
     }
-    .about_text{
+
+    .about_text {
         color: #fff;
         width: 50%;
         height: min-content;
@@ -1085,39 +1097,45 @@ footer {
         align-items: center;
         justify-content: center;
         list-style: circle;
-        background: rgb(0, 0, 0 , 0.4);
+        background: rgb(0, 0, 0, 0.4);
 
-        span{
+        span {
             color: #f15512;
         }
-        .text{
+
+        .text {
             display: inline-block;
 
-            li{
+            li {
                 padding: 10px 5px;
                 margin: 10px;
                 font-size: larger;
             }
         }
     }
+
     @media (max-width: 850px) {
         flex-direction: column;
-            .about_text{
-                width: 90%;
 
-                .text li{
-                    font-size: 1em;
-                }
+        .about_text {
+            width: 90%;
+
+            .text li {
+                font-size: 1em;
             }
+        }
     }
-    @media (max-height: 700px) {
-        .about_text{
+
+    @media (max-width: 380px) {
+        .about_text {
             width: 95%;
 
-            .text li{
+            .text li {
                 font-size: .8em;
             }
         }
+
+
     }
 }
 
