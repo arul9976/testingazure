@@ -385,6 +385,11 @@ header {
   position: relative;
   background: #fff;
 }
+@media (max-width: 354px) {
+  .home .clearfix .img-fluid {
+    width: 130px !important;
+  }
+}
 @media (max-width: 724px) {
   .home .clearfix .img-fluid {
     width: 200px;
@@ -412,13 +417,19 @@ header {
   overflow: hidden;
 }
 .home .home_text h3 {
-  font-size: 1.4em;
+  font-size: 1.4em !important;
   margin-bottom: 15px;
   transition: ease 0.5s;
 }
 @media (max-width: 550px) {
   .home .home_text h3 {
-    font-size: 1.2em;
+    font-size: 1.2em !important;
+    transition: ease 0.5s;
+  }
+}
+@media (max-width: 340px) {
+  .home .home_text h3 {
+    font-size: 0.9em !important;
     transition: ease 0.5s;
   }
 }
@@ -435,15 +446,15 @@ header {
   position: relative;
   width: 90%;
 }
-@media (max-width: 718px) {
-  .home .home_text h1 {
-    font-size: 2.5em;
-    transition: ease 0.5s;
-  }
-}
 @media (max-width: 1024px) {
   .home .home_text h1 {
-    font-size: 3em;
+    font-size: 3em !important;
+  }
+}
+@media (max-width: 658px) {
+  .home .home_text h1 {
+    font-size: 2em !important;
+    transition: ease 0.5s;
   }
 }
 .home .home_text .myName {
@@ -460,20 +471,20 @@ header {
   }
 }
 .home .home_text h5 {
-  font-size: 1.7em;
+  font-size: 1.7em !important;
   transition: ease 0.5s;
   margin-bottom: 15px;
-}
-@media (max-width: 550px) {
-  .home .home_text h5 {
-    font-size: 1.4em;
-    transition: ease 0.5s;
-  }
 }
 .home .home_text h5 span {
   font-size: 1.5em;
   color: #f15512;
   transition: ease 0.5s;
+}
+@media (max-width: 550px) {
+  .home .home_text h5 span {
+    font-size: 1em !important;
+    transition: ease 0.5s;
+  }
 }
 .home p {
   cursor: pointer;
@@ -483,6 +494,13 @@ header {
   color: #f15512;
   font-size: 1.3em;
   transition: ease 0.5s;
+}
+@media (max-height: 668px) {
+  .home p {
+    font-size: 1em !important;
+    transition: ease 0.5s;
+    line-height: 1.4 !important;
+  }
 }
 .home p:hover {
   color: #3b12f1;
@@ -812,7 +830,7 @@ footer p:hover ion-icon:hover {
   color: #2ef506;
 }
 footer .foot {
-  width: 20rem;
+  width: 22rem !important;
   height: auto;
   padding: 2rem;
   margin: 1rem;
@@ -844,6 +862,11 @@ footer .foot .social ul a:hover {
   transition: ease 0.3s;
   background: linear-gradient(to right, #cf07f7, #06f5d5);
   color: #fff;
+}
+@media (max-width: 350px) {
+  footer .foot {
+    width: 18rem !important;
+  }
 }
 footer .foot:hover {
   box-shadow: 0 35px 85px rgba(0, 0, 0, 0.15);
@@ -882,7 +905,13 @@ footer .f2 {
 @media (max-width: 850px) {
   .about .about-img img {
     width: 250px;
-    height: 250px;
+    height: 200px;
+  }
+}
+@media (max-height: 630px) {
+  .about .about-img img {
+    width: 220px;
+    height: 170px;
   }
 }
 .about .about_text {
@@ -925,7 +954,7 @@ footer .f2 {
     width: 95%;
   }
   .about .about_text .text li {
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 }
 
