@@ -8,6 +8,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -79,7 +82,7 @@
 
   <section id="Home">
     <div class="home">
-      <div data-aos="fade-down" class="home_text">
+      <div class="home_text">
         <h3>Hi ,<span>I'm</span></h3>
         <h1 class="myName">Arulkumar M</h1>
         <h5>From<span>Tenkasi</span></h5>
@@ -93,9 +96,9 @@
       </div>
 
       <div class="clearfix">
-        <img data-aos="fade-down" class="img-fluid" src="./images/arul.png" alt="">
+        <img class="img-fluid" src="./images/arul.png" alt="">
       </div>
-      <div class="homeSocial" data-aos="fade-left">
+      <div class="homeSocial">
         <!-- Js -->
       </div>
     </div>
@@ -141,11 +144,8 @@
   <section id="about">
     <div class="about">
       <div class="about-img">
-        <!-- <div style="width:480;height:0;padding-bottom:75%;position:relative;"><iframe
-            src="https://giphy.com/embed/qgQUggAC3Pfv687qPC" width="100%" height="100%" style="position:absolute"
-            frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div> -->
-        <!-- <p><a href="https://giphy.com/gifs/dommespace-domme-space-programador-qgQUggAC3Pfv687qPC">via GIPHY</a></p> -->
-        <img src="images/971.jpg" class="img-fluid" alt="">
+        <img src="images/pro/jpeg-optimizer_9711-min.png" loading="lazy" class="img-fluid" alt="">
+
       </div>
       <div class="about_text rounded">
         <div class="heading">
@@ -169,62 +169,100 @@
   </section>
   <!-- About/ -->
 
+  <div class="lgp">
+    <div class="boxing">
+      <div class="glass" style="--r: -10; --cor: rgb(244, 0, 20);" data-text="Logic">
+        <i class="fa-solid fa-code"></i>
+      </div>
+      <div class="glass" style="--r: 15; --cor: rgb(0, 156, 62);" data-text="Syntax">
+        <i class="fa-solid fa-pencil"></i>
+      </div>
+      <div class="glass" style="--r: -5; --cor: rgb(0, 110, 185);" data-text="Innovation">
+        <i class="fa-solid fa-scale-balanced"></i>
+      </div>
+      <div class="glass" style="--r: 0; --cor: rgb(255, 175, 0);" data-text="Elegance">
+        <i class="fa-solid fa-seedling"></i>
+      </div>
+    </div>
+
+  </div>
   <!-- Skills -->
   <section class="progress_bar" id="skill">
     <div class="box">
-      <div data-aos="flip-left">
-        <div class="boxContent" style="--clr: #fd8f00;">
-          <div class="svg">
-            <ion-icon style="font-size: 2rem;" name="logo-html5"></ion-icon>
-            <div class='textxml' name="htmltxt">HTML</div>
-          </div>
-          <div class="circle" style="--clr: #fd8f00;">
-            <h3 id='progressValues'>0<small>%</small></h3>
-          </div>
+
+      <div class="boxContent" style="--clr: rgb(244, 0, 20);">
+        <div class="svg">
+          <ion-icon style="font-size: 2rem;" name="logo-html5"></ion-icon>
+          <div class='textxml' name="htmltxt">HTML</div>
+        </div>
+        <div class="circle" style="--clr: rgb(244, 0, 20);">
+          <h3 id='progressValues'>0<small>%</small></h3>
         </div>
       </div>
 
-      <div data-aos="flip-left">
-        <div class="boxContent" style="--clr: #00fd22;">
-          <div class="svg">
-            <ion-icon style="font-size: 2rem;" name="logo-css3"></ion-icon>
-            <div class='textxml'>CSS/SASS</div>
-          </div>
-          <div class="circle" style="--clr: #00fd22;">
-            <h3 id='progressValuesCss'>0<small>%</small></h3>
-          </div>
+      <div class="boxContent" style="--clr: rgb(0, 156, 62);">
+        <div class="svg">
+          <ion-icon style="font-size: 2rem;" name="logo-css3"></ion-icon>
+          <div class='textxml'>CSS/SASS</div>
+        </div>
+        <div class="circle" style="--clr: rgb(0, 156, 62);">
+          <h3 id='progressValuesCss'>0<small>%</small></h3>
         </div>
       </div>
 
-      <div data-aos="flip-right">
-        <div class="boxContent" style="--clr: #00c2fd;">
-          <div class="svg">
-            <ion-icon style="font-size: 2rem;" name="logo-javascript"></ion-icon>
-            <div class='textxml'>JavaScript</div>
-          </div>
-          <div class="circle" style="--clr: #00c2fd;">
-            <h3 id='progressValuesJs'>0<small>%</small></h3>
-          </div>
+      <div class="boxContent" style="--clr: rgb(0, 110, 185);">
+        <div class="svg">
+          <ion-icon style="font-size: 2rem;" name="logo-javascript"></ion-icon>
+          <div class='textxml'>JavaScript</div>
+        </div>
+        <div class="circle" style="--clr: rgb(0, 110, 185);">
+          <h3 id='progressValuesJs'>0<small>%</small></h3>
         </div>
       </div>
 
-      <div data-aos="flip-right">
-        <div class="boxContent" style="--clr: #fd00d3;">
-          <div class="svg">
-            <ion-icon style="font-size: 2rem;" name="logo-react"></ion-icon>
-            <div class='textxml'>REACT</div>
-          </div>
-          <div class="circle" style="--clr: #fd00d3;">
-            <h3 id='progressValuesFour'>0<small>%</small></h3>
-          </div>
+      <div class="boxContent" style="--clr: rgb(255, 175, 0);">
+        <div class="svg">
+          <ion-icon style="font-size: 2rem;" name="logo-react"></ion-icon>
+          <div class='textxml'>REACT</div>
+        </div>
+        <div class="circle" style="--clr: rgb(255, 175, 0);">
+          <h3 id='progressValuesFour'>0<small>%</small></h3>
         </div>
       </div>
+
       <!-- I've been teaching myself programming for the past year.
                    While I'm not a college graduate and have no plans to attend, 
                    I am dedicated to expanding my knowledge of both front-end and back-end programming. 
                    Currently, I'm gradually learning how to create and manage websites, as well as picking up some React skills.
                    I have some previous experience with Python, having learned the basics during my twelfth-grade studies.  -->
 
+    </div>
+    <div class="box">
+      <!-- <div data-aos="flip-right"> -->
+      <div class="boxContent" style="--clr: rgb(0, 110, 185);">
+        <div class="svg">
+          <ion-icon style="font-size: 2rem;" name="logo-python"></ion-icon>
+          <div class='textxml'>Python</div>
+        </div>
+        <div class="circle" style="--clr: rgb(0, 110, 185);">
+          <h3 id='progressValuesPython'>0<small>%</small></h3>
+        </div>
+      </div>
+      <!-- </div>
+
+      <div data-aos="flip-right"> -->
+
+      <div class="boxContent" style="--clr: rgb(244, 0, 20);">
+        <div class="svg">
+          <ion-icon style="font-size: 2rem;" name="logo-nodejs"></ion-icon>
+          <div class='textxml' name="git">Node Js</div>
+        </div>
+        <div class="circle" style="--clr: rgb(244, 0, 20);">
+          <h3 id='progressValuesNodeJs'>0<small>%</small></h3>
+        </div>
+      </div>
+
+      <!-- </div> -->
     </div>
 
   </section>

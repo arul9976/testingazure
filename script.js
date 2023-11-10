@@ -51,52 +51,6 @@ function btnToggle(navId, toggleId) {
 }
 btnToggle('myNavbar', 'btn')
 
-
-
-
-// const myName = document.querySelector('.myName')
-// setTimeout(() => {
-//   myName.className = "newName"
-// }, 3000)
-
-
-
-
-// let number = document.getElementById("number");
-// let counter = 0;
-
-// setInterval(() => {
-//   if (counter == "90") {
-//     clearInterval();
-//   } else {
-//     counter += 1;
-//     number.innerHTML = counter + "%"
-//   };
-
-// }, 20);
-
-// let number1 = document.getElementById("number1");
-// let counter1 = 0;
-// setInterval(() => {
-//   if (counter1 == "75") {
-//     clearInterval();
-//   } else {
-//     counter1 += 1;
-//     number1.innerHTML = counter1 + "%"
-//   };
-// }, 25);
-
-// let number2 = document.getElementById("number2");
-// let counter2 = 0;
-// setInterval(() => {
-//   if (counter2 == "50") {
-//     clearInterval();
-//   } else {
-//     counter2 += 1;
-//     number2.innerHTML = counter2 + "%"
-//   };
-// }, 40);
-
 const darkBtn = document.querySelector('.dark')
 const body = document.getElementById('bodyLD')
 
@@ -107,36 +61,18 @@ darkBtn.addEventListener('click', () => {
 })
 
 
-// const Copied = boxadd.children[0].cloneNode(true)
-// const newDiv = document.createElement('div')
-// console.log(newDiv);
-
-
-function double() {
-  // const svg = document.querySelector('.svg')
-  // const clonesvg = svg.cloneNode(true)
-  // const circle = document.querySelector('.circle')
-  // const cloneCircle = circle.cloneNode(true)
-
-  // const newEl = document.createElement('div')
-  // newEl.className = 'boxContent'
-  // newEl.append(clonesvg)
-  // newEl.append(cloneCircle)
-  // console.log(newEl);
-
-}
-
-
 const progressbar = document.querySelectorAll('.circle')
 const progressNum = document.getElementById('progressValues')
 const progressNumCss = document.getElementById('progressValuesCss')
 const progressNumJs = document.getElementById('progressValuesJs')
 const progressNumFour = document.getElementById('progressValuesFour')
+const progressNumFive = document.getElementById('progressValuesPython')
+const progressNumSix = document.getElementById('progressValuesNodeJs')
 const boxadd = document.querySelector('.box')
 
 function progress() {
   let startvalue = 0,
-    endvalue = { 0: 90, 1: 80, 2: 50, 3: 30 },
+    endvalue = { 0: 90, 1: 80, 2: 50, 3: 30, 4: 75, 5: 50 },
 
     speed = 20;
 
@@ -174,6 +110,24 @@ function progress() {
 
     if (startvalue == endvalue[3]) {
       clearInterval(progressFour)
+    }
+  }, speed);
+
+  const progressFive = setInterval(() => {
+    progressNumFive.textContent = `${startvalue}%`
+    progressbar[4].style.background = `conic-gradient(var(--clr) ${startvalue * 3.6}deg, #c5c0c0 0deg)`
+
+    if (startvalue == endvalue[4]) {
+      clearInterval(progressFive)
+    }
+  }, speed);
+
+  const progressSix = setInterval(() => {
+    progressNumSix.textContent = `${startvalue}%`
+    progressbar[5].style.background = `conic-gradient(var(--clr) ${startvalue * 3.6}deg, #c5c0c0 0deg)`
+
+    if (startvalue == endvalue[5]) {
+      clearInterval(progressSix)
     }
   }, speed);
 }

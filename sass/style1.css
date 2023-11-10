@@ -6,7 +6,8 @@
 }
 
 body {
-  background: #e6e6e6;
+  background: #fff;
+  scroll-behavior: smooth;
 }
 
 section {
@@ -511,7 +512,9 @@ header {
 
 .progress_bar {
   padding: 30px 2%;
+  min-height: 130dvh;
   display: flex;
+  gap: 5rem;
   align-items: center;
   justify-content: center;
 }
@@ -519,7 +522,7 @@ header {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-  grid-gap: 4rem;
+  grid-gap: 5rem;
   align-items: center;
   justify-content: center;
 }
@@ -554,12 +557,9 @@ header {
   justify-content: center;
   text-align: center;
 }
-.progress_bar .box .boxContent .circle #progressValues,
-.progress_bar .box .boxContent .circle #progressValuesCss,
-.progress_bar .box .boxContent .circle #progressValuesJs,
-.progress_bar .box .boxContent .circle #progressValuesFour {
+.progress_bar .box .boxContent .circle h3 {
   position: relative;
-  color: rgb(0, 153, 255);
+  color: var(--clr);
   font-weight: 900;
 }
 .progress_bar .box .boxContent .circle::before {
@@ -592,6 +592,32 @@ header {
   font-weight: 900;
 }
 
+@media (max-width: 1065px) {
+  .progress_bar {
+    gap: 7rem;
+  }
+  .progress_bar .box {
+    gap: 5rem;
+  }
+}
+@media (max-width: 1065px) and (max-width: 950px) {
+  .progress_bar {
+    flex-direction: row;
+    gap: 5rem;
+  }
+  .progress_bar .box {
+    gap: 5rem;
+  }
+}
+@media (max-width: 1065px) and (max-width: 640px) {
+  .progress_bar {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .progress_bar .box {
+    gap: 2rem;
+  }
+}
 @property --b {
   syntax: "<angle>";
   inherits: false;
@@ -958,6 +984,93 @@ footer .f2 {
   }
 }
 
+.lgp {
+  height: 35rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.lgp .boxing {
+  width: 90%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  box-shadow: -5px -5px 45px 10px rgba(97, 92, 92, 0.25);
+}
+.lgp .glass {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border: 3px solid var(--cor);
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  background: var(--cor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 0 -45px;
+  transform: rotate(calc(var(--r) * 1deg));
+}
+.lgp .glass i {
+  font-size: 5rem;
+  color: #fff !important;
+}
+.lgp .glass::before {
+  content: attr(data-text);
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lgp .boxing:hover .glass {
+  transform: rotate(0deg);
+  margin: 0 10px;
+}
+
+@media (max-width: 840px) {
+  .lgp .glass {
+    width: 200px;
+    height: 200px;
+  }
+  .lgp:hover .glass {
+    height: 170px;
+  }
+}
+@media (max-width: 650px) {
+  .lgp .glass {
+    width: 180px;
+    height: 180px;
+  }
+  .lgp .glass i {
+    font-size: 2.5rem;
+  }
+  .lgp:hover .glass {
+    height: 130px;
+  }
+}
+@media (max-width: 650px) and (max-width: 520px) {
+  .lgp .glass {
+    width: 150px;
+    height: 150px;
+  }
+  .lgp .glass i {
+    font-size: 1.5rem;
+  }
+  .lgp:hover .glass {
+    font-size: 0.9em;
+    height: 100px;
+  }
+}
 .bodyDark .navitem {
   background: #000;
 }
