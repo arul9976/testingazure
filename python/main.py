@@ -10,7 +10,7 @@ addr_to = "ramanasrianandha@gmail.com"
 # Define SMTP email server details
 smtp_server = "smtp.gmail.com"
 smtp_user = "arunmicheal8@gmail.com"
-smtp_pass = "dlylrsedgwyzrdwu"
+smtp_pass = "etnn vknc hlxl grdx"
 
 
 def sendEmail(subject, receiverEmail, name):
@@ -32,7 +32,7 @@ def sendEmail(subject, receiverEmail, name):
     )
 
     with smtplib.SMTP_SSL("smtp.gmail.com", port=465) as smtp:
-        smtp.login("arunmicheal8@gmail.com", "dlylrsedgwyzrdwu")
+        smtp.login("arunmicheal8@gmail.com", "etnnvknchlxlgrdx")
         # smtp.starttls()
         smtp.sendmail(subject, receiverEmail, msg.as_string())
 if __name__ == "__main__":
