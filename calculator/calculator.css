@@ -1,0 +1,123 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    outline: none;
+}
+body{
+    background-color: #ecf0f3;
+}
+body.dark{
+    background-color: #333;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calculator{
+    background-color: #ecf0f3;
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: inset 5px 5px 12px #ffffff,
+                      5px 5px 12px rgba(0, 0, 0, .16);
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+
+}
+body.dark .calculator{
+    background: #333;
+    box-shadow: inset 5px 5px 12px rgba(0, 0, 0, .25),
+                      5px 5px 12px rgba(0, 0, 0, .25);
+    border: none;
+    border-radius: 30px;
+}
+input{
+    grid-column: span 4;
+    border-radius: 10px;
+    border: none;
+    height: 70px;
+    width: 200px;
+    background-color: #ecf0f3;
+    box-shadow: inset -5px -5px 12px #ffffff,
+                inset  5px 5px 12px rgba(0, 0, 0, .16);
+    color: rgba(70,70,70s);
+    font-size: 40px;
+    text-align: end;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+body.dark input{
+    color: #fff;
+    background-color: #333;
+    box-shadow: -5px -5px 12px #333,
+                5px 5px 12px rgba(0, 0, 0, .16),
+                inset -5px -5px 12px #333,
+                inset  5px 5px 12px rgba(0, 0, 0, .16);
+
+}
+button{
+    height: 40px;
+    width: 40px;
+    box-shadow:  -5px -5px 12px #ffffff,
+                  5px 5px 12px rgba(0, 0, 0, .16);
+    border: none;
+    border-radius: 20px;
+    margin: 6px;
+    font-size: 12px;
+}
+body.dark button{
+    background-color: #333;
+    color: #fff;
+    box-shadow:  inset -5px -5px 12px #333,
+                 inset 5px 5px 12px rgba(0, 0, 0, .25),
+                -5px -5px 12px #333,
+                 5px 5px 12px rgba(0, 0, 0, .25);
+}
+.equal{
+    width: 90px;
+    border-radius: 10px;
+}
+
+.btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    font-size: 1.5em;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .25),
+                5px 5px 30px rgba(0, 0, 0, .25),
+                inset 2px 2px 5px rgba(0, 0, 0, .25),
+                inset 2px 2px 5px rgba(0, 0, 0, .25);
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+body.dark .btn{
+    background: #333;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0,0.1),
+                5px 5px 30px rgba(0, 0, 0,0.1),
+                inset 2px 2px 5px rgba(0, 0, 0,0.1),
+                inset 2px 2px 5px rgba(0, 0, 0,0.1);
+}
+.btn strong{
+    display: none;
+}
+.btn strong:nth-child(1){
+    display: block;  
+}
+body.dark .btn strong:nth-child(1){
+    display: none;
+}
+body.dark .btn strong:nth-child(2){
+    display: block;
+}

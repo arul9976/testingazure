@@ -1,0 +1,33 @@
+
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#top{
+
+    padding: 10px;
+}
+
+#all, #sum, #sub{
+    position: relative;
+    left: 120px;
+    width: 80px;
+    margin: 15px;
+}
+input{
+    width: 100px;
+    height: 40px;
+}
+.ace{
+    margin: 30px;
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.ace input{
+    width: 120px;
+    margin-left: 10px;
+}
