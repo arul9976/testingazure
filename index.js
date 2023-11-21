@@ -57,8 +57,7 @@ app.set('view engine', 'ejs');
 // })
 
 
-const PORT = 8000
 
-app.listen(PORT, () => {
-    console.log(`Listening port on ${PORT}`)
+app.listen(8080, () => {
+    console.log(`Listening PORT on ${8080}`)
 })
