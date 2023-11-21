@@ -52,12 +52,12 @@ app.use(cors(corsOptions))
 app.use(express.static("public"))
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-    res.render("main")
-})
+// app.get('/', (req, res) => {
+//     res.render("main")
+// })
 
 
-const PORT = 8080
+const PORT = 8000
 
 app.listen(PORT, () => {
     console.log(`Listening port on ${PORT}`)
