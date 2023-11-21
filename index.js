@@ -24,32 +24,32 @@ const app = express();
 // });
 
 
-const userSchema = new mongoose.Schema({
-    username: String,
-    subject: String,
-    message: String,
-    checked: Boolean,
-    TimeDate: {
-        date: String,
-        month: String,
-        hours: String,
-        minutes: String,
-        ampm: String,
-    }
-});
+// const userSchema = new mongoose.Schema({
+//     username: String,
+//     subject: String,
+//     message: String,
+//     checked: Boolean,
+//     TimeDate: {
+//         date: String,
+//         month: String,
+//         hours: String,
+//         minutes: String,
+//         ampm: String,
+//     }
+// });
 
-const corsOptions = {
-    origin: '*',
-    credentials: true,
-    optionSuccessStatus: 200,
-}
+// const corsOptions = {
+//     origin: '*',
+//     credentials: true,
+//     optionSuccessStatus: 200,
+// }
 
 
 // app.use(express.json())
 // app.use(bodyParser.json())
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(cors(corsOptions))
-// app.use(express.static("public"))
+app.use(express.static("public"))
 // app.set('view engine', 'ejs');
 
 // app.get('/', (req, res) => {
