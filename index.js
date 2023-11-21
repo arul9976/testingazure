@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path')
 
-// const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt-nodejs')
 // const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose');
 const cors = require('cors')
@@ -77,16 +77,22 @@ app.post('/app/SignUp/', async (req, res) => {
             Password: req.body.Formobject.Password,
         }
 
-        const saltRounds = 10;
-        const hashpass = await bcrypt.hash(data.Password, saltRounds)
-        data.Password = hashpass
-        console.log(data)
-        const userdata = await Login.insertMany(data)
+        const password = await data.Password
 
-        console.log('data', userdata);
-        return res.json(userdata)
+        bcrypt.hash(password, null, null, async (err, hash) => {
+            try {
+                console.log('pass', hash)
+                data.Password = hash
+                const userdata = await Login.insertMany(data)
 
+                console.log('data', userdata);
 
+                return res.json(userdata)
+            }
+            catch {
+                console.log('pass', err)
+            }
+        })
     }
 
     catch (error) {
@@ -109,13 +115,16 @@ app.post('/app/Login/', async (req, res) => {
             console.log('password', req.body.Formobject.Password)
             const pass = Data[0].Password
             console.log('email', pass)
-            if (await bcrypt.compare(req.body.Formobject.Password, pass)) {
-                console.log('pass')
-                res.json(Data)
-            }
-            else {
-                res.json({ error: 'Un/Ps wrong' })
-            }
+            const Userpass = req.body.Formobject.Password
+            bcrypt.compare(Userpass, pass, (err, response) => {
+                if (response) {
+                    console.log('pass')
+                    res.json(Data)
+                }
+                else {
+                    res.json({ error: 'Un/Ps wrong' })
+                }
+            })
 
         }
         else {
