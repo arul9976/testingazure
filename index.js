@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path')
 
-// const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt')
 // const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose');
 const cors = require('cors')
 const bodyParser = require('body-parser');
-// const { ObjectId } = require('mongodb');
+const { ObjectId } = require('mongodb');
 // const router = express.Router()
 
 const app = express();
@@ -68,70 +68,70 @@ app.get('/Dashboard', (req, res) => {
 const Login = require('./src/db_Login');
 
 
-// app.post('/app/SignUp/', async (req, res) => {
-//     try {
+app.post('/app/SignUp/', async (req, res) => {
+    try {
 
-//         const data = {
-//             Username: req.body.Formobject.Username,
-//             Email: req.body.Formobject.Email,
-//             Password: req.body.Formobject.Password,
-//         }
+        const data = {
+            Username: req.body.Formobject.Username,
+            Email: req.body.Formobject.Email,
+            Password: req.body.Formobject.Password,
+        }
 
-//         const saltRounds = 10;
-//         const hashpass = await bcrypt.hash(data.Password, saltRounds)
-//         data.Password = hashpass
-//         console.log(data)
-//         const userdata = await Login.insertMany(data)
+        const saltRounds = 10;
+        const hashpass = await bcrypt.hash(data.Password, saltRounds)
+        data.Password = hashpass
+        console.log(data)
+        const userdata = await Login.insertMany(data)
 
-//         console.log('data', userdata);
-//         return res.json(userdata)
-
-
-//     }
-
-//     catch (error) {
-//         console.log('Error processing data:', error);
-//         res.status(500).json({ error: 'Internal Server Error' });
-//     }
+        console.log('data', userdata);
+        return res.json(userdata)
 
 
-// })
+    }
 
-// app.post('/app/Login/', async (req, res) => {
-
-//     const DataEL = await req.body
-
-
-//     const Data = await Login.find({ Email: DataEL.Formobject.Email }).lean()
-//     console.log('hi', Data)
-//     try {
-//         if (Data.length !== 0) {
-//             console.log('password', req.body.Formobject.Password)
-//             const pass = Data[0].Password
-//             console.log('email', pass)
-//             if (await bcrypt.compare(req.body.Formobject.Password, pass)) {
-//                 console.log('pass')
-//                 res.json(Data)
-//             }
-//             else {
-//                 res.json({ error: 'Un/Ps wrong' })
-//             }
-
-//         }
-//         else {
-//             res.json({ error: 'User not exists' })
-//         }
-
-//         // res.json(Data)
-//     }
-
-//     catch (error) {
-//         console.log('Error processing data:', error);
-//         res.status(500).json({ error: 'Internal Server Error' });
-//     }
+    catch (error) {
+        console.log('Error processing data:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 
 
-// })
+})
+
+app.post('/app/Login/', async (req, res) => {
+
+    const DataEL = await req.body
+
+
+    const Data = await Login.find({ Email: DataEL.Formobject.Email }).lean()
+    console.log('hi', Data)
+    try {
+        if (Data.length !== 0) {
+            console.log('password', req.body.Formobject.Password)
+            const pass = Data[0].Password
+            console.log('email', pass)
+            if (await bcrypt.compare(req.body.Formobject.Password, pass)) {
+                console.log('pass')
+                res.json(Data)
+            }
+            else {
+                res.json({ error: 'Un/Ps wrong' })
+            }
+
+        }
+        else {
+            res.json({ error: 'User not exists' })
+        }
+
+        // res.json(Data)
+    }
+
+    catch (error) {
+        console.log('Error processing data:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+
+})
 
 const GetUser = (DataEL) => {
     app.get('/app/Dashboard/Login/', async (request, response) => {
