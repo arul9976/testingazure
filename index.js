@@ -13,7 +13,6 @@ const app = express();
 // const dotenv = require('dotenv')
 // dotenv.config()
 
-// connectDb()
 // console.log('url', process.env.MONGODB_URI)
 
 const mongoURI = 'mongodb+srv://arulkumar72004:9O5XC38UPek8kVQb@cluster0.jlckex6.mongodb.net/?retryWrites=true&w=majority'
@@ -146,7 +145,7 @@ const GetUser = (DataEL) => {
     app.get('/app/Dashboard/Login/', async (request, response) => {
         const Data = await Login.findOne({ Email: DataEL })
 
-        console.log('datassss', Data);
+        console.log('datas', Data);
         response.json([Data])
 
     })
