@@ -50,11 +50,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors(corsOptions))
 app.use(express.static("public"))
-// app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
-// app.get('/', (req, res) => {
-//     res.render("main")
-// })
+app.get('/', (req, res) => {
+    res.render("main")
+})
 
 
 
