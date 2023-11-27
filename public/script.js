@@ -1,5 +1,4 @@
 
-
 const itemTemplates = document.querySelector('#item-template')
 // const RemoveAll = document.querySelector('.removeAll')
 const Username = document.querySelector('.Login > .UserLogin > .User > .Username')
@@ -8,6 +7,11 @@ const mediaQuery950 = window.matchMedia("(max-width:950px)")
 
 const msg = document.querySelector('.list-items > ul')
 
+
+const addTodo = document.querySelector('.add-todo')
+const addMsg = document.querySelector('.add_msg')
+const addTodobtn = document.querySelector('.add-todo-btn')
+const addButton = document.querySelector('.icons > .add-button');
 
 
 const savedItems = []
@@ -142,9 +146,11 @@ const displayItem = (ItemsOnList, appear = false) => {
     const itemTitle = itemNode.querySelector('.list-item__title > *')
     const itemMsg = itemNode.querySelector('#msg')
     const DeleteEl = itemNode.querySelector('.menu_wrapper > .menu_base > .DeleteBar')
+    const EditEl = itemNode.querySelector('.menu_wrapper > .menu_base > .EditBar')
     const MenuBtn = itemNode.querySelector('.menu_wrapper > .menuBar')
     const MenuBase = itemNode.querySelector('.menu_wrapper > .menu_base')
     const date = itemNode.querySelector('#time')
+
 
     date.textContent = `${ItemsOnList.TimeDate.date} ${ItemsOnList.TimeDate.month} ${ItemsOnList.TimeDate.hours}:${ItemsOnList.TimeDate.minutes} ${ItemsOnList.TimeDate.ampm}`
     MenuBtn.addEventListener('click', (e) => {
@@ -188,7 +194,6 @@ const displayItem = (ItemsOnList, appear = false) => {
     })
 
 
-
     if (appear) {
         itemNode.classList.add('appear')
     }
@@ -207,29 +212,39 @@ const displayItem = (ItemsOnList, appear = false) => {
     //     })
     // })
 
+    const deleteFunc = () => {
+        const __id = ItemsOnList._id
+        const uname = Username.textContent
+        deleteTask(uname, __id)
+    }
     DeleteEl.addEventListener('click', () => {
         if (itemNode.classList.contains('checked')) {
             console.dir(itemNode)
         }
-        const __id = ItemsOnList._id
+        deleteFunc()
 
-        const uname = Username.textContent
-
-        deleteTask(uname, __id)
         const duration = getAnimation(DeleteEl)
         setTimeout(() => {
             const index = savedItems.indexOf(ItemsOnList)
 
             savedItems.splice(index, 1);
-            // if (NumData % 2 == 0) {
-            //     col_1.removeChild(itemNode)
-            // }
-            // else {
-            //     col_2.removeChild(itemNode)
-            // }
+
             msg.removeChild(itemNode)
 
         }, duration);
+    })
+
+    EditEl.addEventListener('click', () => {
+
+        addPanel.classList.add('open')
+        addButton.classList.add('open')
+
+        addTodo.value = ItemsOnList.subject
+        addMsg.value = ItemsOnList.message
+        deleteFunc()
+
+        msg.removeChild(itemNode)
+
     })
 
 }
@@ -252,7 +267,7 @@ const DataLoad = (data) => {
 
 
 }
-//deleDtaonDataBase
+//deleDataonDataBase
 const deleteTask = async (data, ID) => {
     console.log('delete Loaded', data);
     const uname = ID
@@ -272,12 +287,6 @@ const deleteTask = async (data, ID) => {
             console.error("Network error:", error);
         });
 };
-
-
-
-const addTodo = document.querySelector('.add-todo')
-const addMsg = document.querySelector('.add_msg')
-const addTodobtn = document.querySelector('.add-todo-btn')
 
 addTodobtn.addEventListener('click', () => {
     addTodobtn.classList.add('sending');
@@ -312,7 +321,6 @@ addTodobtn.addEventListener('click', () => {
     }
 })
 
-const addButton = document.querySelector('.icons > .add-button');
 const addPanel = document.querySelector('.addPanel');
 const refresh = document.querySelector('.FormDatas > .list_header > .refresh');
 
@@ -327,6 +335,8 @@ refresh.addEventListener('click', () => {
     LoginLoaded()
     console.log('run')
 })
+
+
 addButton.addEventListener('click', () => {
     addButton.classList.toggle('open');
     addPanel.classList.toggle('open');

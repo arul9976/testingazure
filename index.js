@@ -16,6 +16,7 @@ const app = express();
 // console.log('url', process.env.MONGODB_URI)
 
 const mongoURI = 'mongodb+srv://arulkumar72004:9O5XC38UPek8kVQb@cluster0.jlckex6.mongodb.net/?retryWrites=true&w=majority'
+// const mongoURI = 'mongodb://localhost:27017'
 console.log('url', mongoURI)
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
@@ -193,6 +194,22 @@ app.post('/app/', async (req, res) => {
 
 })
 
+app.get('/app/:username/', async (req, res) => {
+
+    const data = req.params;
+    console.log('name', data)
+    const User = DataPost(data.username)
+    try {
+        const items = await User.find({ username: data.username });
+        console.log('Items', items);
+        res.json(items);
+    } catch (err) {
+        console.error('Error retrieving data: ', err);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
 app.delete('/app/:id/', async (req, res) => {
     const data = req.params;
     const dataSplit = data.id.split(':')
@@ -215,21 +232,6 @@ app.delete('/app/:id/', async (req, res) => {
     }
 
 
-});
-
-app.get('/app/:username/', async (req, res) => {
-
-    const data = req.params;
-    console.log('name', data)
-    const User = DataPost(data.username)
-    try {
-        const items = await User.find({ username: data.username });
-        console.log('Items', items);
-        res.json(items);
-    } catch (err) {
-        console.error('Error retrieving data: ', err);
-        res.status(500).send('Internal Server Error');
-    }
 });
 
 app.listen(8080, () => {
